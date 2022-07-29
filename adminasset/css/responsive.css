@@ -1,0 +1,155 @@
+@media only screen and (max-width: 1024px)
+{
+	.header-section-2 .menu > li{margin-right: 6px;}
+	.main_menu #ulCategory > li{padding: 12px;margin-right:12px;}
+	.record_section .main_block .download_button{padding: 10px 8px;}
+	.main_block .row img {width: 100%;}
+  .main_section .range_section table tr td .progress{width: 110px;}
+	.main_section .range_section table tr th {padding: 2px;}
+	.System_status_section1 .box {margin:0px 10px;}
+	.System_status_section1{padding: 15px;}
+	.System_status_section1 .box img{width: 100%;}
+	.System_status_section1 .box:after{width:80px;right: -65px;}
+	.record_section .main_block input[type=time]{width: 100%;}
+	
+	.main_block .main_block_hour_section{position: unset;}
+	.main_block .file_section{position: unset;}
+	.main_block .Data_Volume_section{position: unset;}
+	.header-section-2 .menu > li > a{font-size: 66%;}
+	.record_section h3{margin: 10px 0px 20px 0px;}
+	.my_pie_graph {margin: 10px;}
+  .record_section h3 {margin: 10px 0px 50px 0px;}
+  .main_section .left_section .Cluster > li{margin-left: 12%;}
+    .left_section .my_pie_graph .col-lg-4 {max-width: 100%;}
+    .reporting_section .reporting_section1_navbar{height: auto;}
+    .main_section .right_section .tabs li {height: 16.5vh;}
+    .reporting_section .reporting_section1_navbar ul li {margin-left: 1%;}
+    .main_menu #ulCategory > li{margin-right: 24px;}
+    .header-section {height: 10vh;}
+    .Contact_section, .register_section, .reporting_section, .main_section, .System_status{height: 90vh;}
+
+
+
+
+}
+
+/*ipad*/
+@media only screen and (max-width: 768px)
+{    
+  .mobile_logo_section .row{margin: 0px;}
+	.user_Section span{display: block;position: absolute;right: 20px;top: 0px;color:#2E2E2E;}
+  .mobile_nav_menu .user_Section span{margin-top: 10px;}
+	.mobile_nav_menu {display: block;}
+	.header-section{display: none;}
+	.mobile_nav_menu .mobile_logo_section {margin: 10px 0px;width: 100%;}
+	.mobile_nav_menu .site-logo{width: 33%;text-align: center;}
+	.mobile_nav_menu .logo_section{width: 33%;text-align: center;}
+	.mobile_nav_menu .user_Section{width: 33%;text-align: center;}
+	.mobile_nav_menu .user_Section i{background: #008BCB80; color: #004366;padding: 10px;border-radius: 3px;cursor: pointer;}
+    .mobile_nav_menu .mobile_menu1{width: 100%;margin: 20px 0px;}
+    .mobile_nav_menu .mobile_menu1 ul{padding: 0px;text-align: center;margin:0px;}
+    .mobile_nav_menu .mobile_menu1 ul li{list-style: none;display: inline;margin: 0px 10px;}
+    .mobile_nav_menu .mobile_menu1 ul li a{background: #008BCB;color: #fff;font-size: 65%;font-weight: 400;padding: 8px 15px;border-radius: 3px;}
+    .mobile_nav_menu .mobile_menu1 ul li > a:hover {background: #004366;text-decoration: none;}
+    .mobile_nav_menu .mobile_menu2{padding:25px;text-align: center;width: 100%;height: 350px;background: #77BFE3;}
+    .mobile_menu2 #ulCategory {padding: 0px; margin: 0px;text-align: center;}
+    .mobile_menu2 #ulCategory > li {cursor: pointer;position: relative;box-shadow: 2px 2px 4px #71717140;background: #008BCB;list-style: none;width:45%;float: left;display: block;margin: 15px;padding: 10px;border-radius: 3px;}
+    .mobile_menu2 #ulCategory > li > a {padding:0px;color: #fff;font-size:88%;text-transform: capitalize;}
+    .mobile_menu2 #ulCategory > li > a >p{margin: 0px;}
+    .mobile_menu2 #ulCategory > li:hover{background: #004366;}
+    .mobile_menu2 #ulCategory > li >a:hover { text-decoration: none;}
+    .mobile_menu2 #ulCategory > li.active {background: #fff !important;}
+    .mobile_menu2 #ulCategory > li.active a{color: #008BCB;}
+    .mobile_menu2 #ulCategory > li.active .image1{display: block;position: absolute;left: 20px;top: 12px;}
+    .mobile_menu2 #ulCategory > li .image1 {display: none;}
+   .record_section .main_block{height: auto;}
+   .sidenav .user_Sectiion { text-align: left; margin: 10px 0px;}
+   #mySidenav .user_Section {margin: 20px;}
+   #mySidenav .user_Section h3 {color: #004366;text-transform: capitalize;font-size: 12px; margin-bottom: 5px;font-weight: bold;}
+   #mySidenav .user_Section  p {font-size: 8px;color: #717171;font-weight: 600;}
+   #mySidenav .user_Section  i { background: #008BCB80;position: relative;color: #004366;padding: 10px;border-radius: 3px;float: left;cursor: pointer;margin-right: 10px;}
+   #mySidenav .user_Section  i:hover {background: #004366;text-decoration: none;color: #fff;}
+   #mySidenav .notification_Section ul > li > a {border-radius: 3px;background: #008BCB80; position: relative; padding: 5px 10px;}
+   #mySidenav .notification_Section ul > li { margin-right: 6%;list-style: none;display: inline-block;}
+   #mySidenav .notification_Section ul {padding: 0px;text-align: left;margin: 10px 20px;}
+   #mySidenav .notification_Section  ul > li > a >i {font-size: 14px;color: #004366;}
+   #mySidenav .notification_Section ul > li > a >span {color: #fff;position: absolute;top: 2px;left: 15px;text-align: center; width: 16px;height: 16px;border-radius: 50%;background: #80BA27; border: 1px solid #80BA27;font-size: 10px;}
+   #mySidenav .notification_Section ul > li > a:hover { background: #004366; text-decoration: none;}
+   #mySidenav .notification_Section ul > li > a:hover i { background: #004366;text-decoration: none;color: #fff;}
+  .login_section .login_form2 h1 {font-size: 130%;}
+   .contact_section1 ul > li{position: unset;list-style: block;}
+    .contact_section1 ul > li span{position: unset;}
+    .send_file_section{padding: 5%;}
+    .Contact_section{padding: 3%;height: auto;}
+    .contact_section1 h2:after {width: 75%;}
+    .main_section .left_section .Cluster > li >a{font-size: 100%;}
+    .main_block .row img {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+   .record_section .Camera_Angles_select_section {height: 100vh;}
+   .reporting_section .Report_main_section{height: auto;}
+    .main_section{padding: 5%;height: auto;}
+    .System_status{padding: 5%;}
+    .reporting_section{padding: 5%;height: auto;}
+    .contact_section1{height: auto;}
+    .register_section{padding: 5%;height: auto;}
+    .right_section {margin-top: 10%;}
+    .record_section{margin-top: 10%;}
+    .right_section_content2 .contents > li {width: 35%;}
+    .right_section_content2 .contents{width: 100%;}
+    .register_section1 ul li img {right: 5px;}
+    .register_section1 ul > li:hover .image2 {right: 5px;}
+    .reporting_section .reporting_section1_navbar ul{text-align: left;}
+    .reporting_section .Report_main_section h2:after {width: 77%;}
+    .reporting_section .reporting_section1_navbar ul li {margin: 0px 15px 0px 0px;}
+    .register_section1 {height: auto;}
+    .main_section .left_section{height: auto;}
+    .main_section .right_section{height: auto;}
+    .right_section_content2 .contents > li{padding: 2%;margin: 2%;}
+    .Download_button {text-align: left;}
+    .Report_main_section .left_section{height: auto;}
+    .System_status_section1 {padding: 30px;width: 100%;overflow-x: auto;white-space: nowrap;}
+    .System_status_section1 .box{width: 30%;}
+    .System_status_section1 .box ul li{font-size: 45%;}
+    .System_status_section1 .box_detail ul li {font-size: 45%;}
+    .System_status_section1 .box_detail ul {width: 30%; margin: 0px -691px 0 auto;}
+   
+
+
+  
+
+} 
+
+/*mobile*/
+@media only screen and (max-width: 460px)
+{
+   
+	.mobile_nav_menu .site-logo img{width: 50% !important;}
+  .reporting_section{height: auto;}
+	.mobile_nav_menu .logo_section img{width: 80% !important;}
+	.mobile_menu2 #ulCategory > li{margin: 8px 9px;padding: 15px;width: 40%;}
+	.contact_section1 h2:after {width: 45%;}
+    .right_section .row .col-md-3{padding: 15px;}
+    .main_section .right_section .right_section_content1 {width:55%;}
+    .reporting_section .Report_main_section h2:after{width:55%;}
+    .reporting_section .reporting_section1_navbar{text-align: left;}
+    .main_section .left_section > .range_section{height: 80vh;}
+    .main_section .left_section .Cluster{height: 10vh;}
+    .System_status_section1 h3 {width: 40%;}
+   
+    .System_status_section1 .box.active:after {width: 85px;}
+   
+    .record_section .main_block{height: auto;}
+    .sidenav{height: 35%;width: 200px;}
+    .System_status_section1 .box_detail ul:after{left: 80px;}
+    .main_section .left_section .Cluster > li >a {font-size: 65%;}
+    .my_pie_graph .col-lg-4{max-width: 33% !important;}
+    .my_pie_graph .chart_demo  canvas{width: 65px !important;height: 65px !important;}
+    .my_pie_graph .percent_name {top: 18px;left: 30px;}
+    .Report_main_section .calender_section{height: auto;}
+     .System_status_section1 .box_detail ul {width: 65%;margin: 0px -420px 0 auto;}
+
+
+}

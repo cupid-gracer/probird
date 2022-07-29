@@ -1,0 +1,214 @@
+Title	WebSite	Address	Phone	Email
+Kababe Grill	http://kababe.net/	18677 Devonshire St, Northridge, CA 91324, United States	+1 818-363-6555	No
+Halal House	http://halalhousela.com/	9514 Reseda Blvd #11, Northridge, CA 91324, United States	+1 818-527-1440	No
+Señor Sol	http://senorsolrestaurante.com/	3137, 9233 Reseda Blvd, Northridge, CA 91324, United States	+1 818-341-3024	No
+Wood Ranch	https://www.woodranch.com/restaurants/northridge	9301 Tampa Ave, Northridge, CA 91324, United States	+1 818-886-6464	No
+Yard House	https://www.yardhouse.com/locations/ca/northridge/northridge-fashion-center/8342?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_dt:20190131_sn:gmb_gt:northridge-ca-8342_pl:locurl_rd:1041	9301 Tampa Ave Suite 216, Northridge, CA 91324, United States	+1 818-721-0085	No
+Kickin KAsian	http://www.kickinkasian.com/	9545 Reseda Blvd #20, Northridge, CA 91324, United States	+1 818-280-5563	No
+Lum-Ka-Naad	http://lumkanaadthai.com/	8910 Reseda Blvd, Northridge, CA 91324, United States	+1 818-882-3028	No
+Thai Bamboo	https://thaibambootogo.com/	9084 Tampa Ave, Northridge, CA 91324, United States	+1 818-734-6610	mail@burak-aydin.com
+Chutamas Thai Cuisine	http://www.chutamasthainorthridge.com/	8333 Tampa Ave, Los Angeles, CA 91324, United States	+1 818-678-9326	No
+Pita Pockets	http://pitapockets.juisyfood.com/	9127 Reseda Blvd, Northridge, CA 91324, United States	+1 818-709-4444	No
+Waffle Love - Northridge	http://waffluv.com/	9411 Reseda Blvd, Northridge, CA 91324, United States	+1 818-671-5344	waffluv@gmail.com
+Falafel Palace	http://www.facebook.com/falafelpalace/	9255 Reseda Blvd, Northridge, CA 91324, United States	+1 818-993-0734	No
+Emle's	http://www.emlesnorthridge.com/	9250 Reseda Blvd Suite 1, Northridge, CA 91324, United States	+1 818-772-2203	smmak419@gmail.com
+Sushi KATSU-YA Northridge	http://www.katsu-yagroup.com/northridge/	9701 Reseda Blvd, Northridge, CA 91324, United States	+1 818-678-1700	No
+Fresh Potato Factory	http://www.freshpotatofactory.com/	9420 Reseda Blvd #6, Northridge, CA 91324, United States	+1 818-886-8156	No
+Lilian's Bread and Sweets	https://www.liliansbreadandsweets.com/	8870 Tampa Ave, Northridge, CA 91324, United States	+1 818-927-1917	No
+Chi-Chi's Pizza	http://chichispizza.com/	9080 Tampa Ave, Northridge, CA 91324, United States	+1 818-993-9911	No
+"The Stand ""American Classics Redefined"""	https://www.thestand.com/	19600 Plummer St #700, Northridge, CA 91324, United States	+1 818-709-3820	No
+In-N-Out Burger	http://locations.in-n-out.com/208	8830 Tampa Ave, Northridge, CA 91324, United States	+1 800-786-1000	No
+Buenos Aires Grill	http://www.buenosairesgrill.la/	8856 Corbin Ave, Northridge, CA 91324, United States	+1 818-772-5552	filler@godaddy.com
+Claim Jumper Restaurants	https://www.claimjumper.com/locations.aspx	9429 Tampa Ave, Northridge, CA 91324, United States	+1 818-718-2882	you@email.com
+Maria's Italian Kitchen	http://www.mariasitaliankitchen.com/	9161 Reseda Blvd #3031, Northridge, CA 91324, United States	+1 818-341-5114	No
+A & H Shawarma and Kabob	http://shawarmakabob.com/	8450 Reseda Blvd, Northridge, CA 91324, United States	+1 818-818-6452	info@shawarmakabob.com
+Tomo Sushi	https://www.mytomosushi.com/	18707 Devonshire St, Northridge, CA 91324, United States	+1 818-368-2720	No
+Chi's Chinese Cuisine	http://chischinese.net/	9635 Reseda Blvd, Northridge, CA 91324, United States	+1 818-886-6928	chis_chinese@verizon.net
+Agua Chiles Sushi Bar	https://www.aguachilessushi.com/	9129 Reseda Blvd, Northridge, CA 91324, United States	+1 818-812-9613	No
+Shamshiri Restaurant	http://www.shamshirinorthridge.net/	19249 Roscoe Blvd, Northridge, CA 91324, United States	+1 818-885-7846	shamshirinorthridge@yahoo.com
+L A Lasagna Co	http://lalasagnacompany.com/	8510 Reseda Blvd, Northridge, CA 91324, United States	+1 818-885-8916	No
+Mambo International Kitchen	http://mamboresto.com/	8300 Tampa Ave suite a, Northridge, CA 91324, United States	+1 747-777-3511	mambomambo.info@gmail.com
+Chick-fil-A	https://www.chick-fil-a.com/northridge	8875 Tampa Ave, Northridge, CA 91324, United States	+1 818-882-3106	No
+Joyce's Coffee Shop & Restaurant	http://joycescoffeeshop.com/	8826 Reseda Blvd, Northridge, CA 91324, United States	+1 818-885-8818	No
+Mandarin Deli Restaurant	https://www.facebook.com/Mandarin-Deli-Restaurant-114284998596330/	9305 Reseda Blvd, Northridge, CA 91324, United States	+1 818-993-0122	No
+Hook'd Fish Grill	http://www.hookdfishgrill.com/	10176 Reseda Blvd #1487, Northridge, CA 91324, United States	+1 818-960-2006	info@hookdfishgrill.com
+Hot Wok Cafe	https://hotwokcafeca.com/	9135 Reseda Blvd, Los Angeles, CA 91324, United States	+1 818-886-1168	No
+Yanagi Sushi	http://www.myyanagisushi.com/	8966 Corbin Ave, Northridge, CA 91324, United States	+1 818-701-1651	No
+Brent's Deli Northridge	http://brentsdeli.com/	19565 Parthenia St, Northridge, CA 91324, United States	+1 818-886-5679	No
+Mariscos La Serenata VIP	https://www.facebook.com/pg/Mariscos-La-Serenata-VIP-1436736879891561/about/	19265 Roscoe Blvd, Northridge, CA 91324, United States	+1 818-993-1404	No
+Chili's Grill & Bar	https://www.chilis.com/locations/us/ca/northridge/northridge/?utm_source=gpo&utm_medium=local&utm_campaign=gmb	9200 Reseda Blvd, Northridge, CA 91324, United States	+1 818-886-2191	No
+Dog Haus Biergarten Northridge	http://northridge.doghaus.com/	8931 Reseda Blvd, Northridge, CA 91324, United States	+1 747-202-3349	No
+King's Burgers and Got Sushi	https://www.kingsgotsushi.com/	9345 Reseda Blvd, Northridge, CA 91324, United States	+1 818-885-6456	8b4e078a51d04e0e9efdf470027f0ec1@sentry.wixpress.com
+Szechuan Place	https://szechuanplace.us/	9250 Reseda Blvd, Northridge, CA 91324, United States	+1 818-280-5355	No
+Small Island	http://www.smallislandfood.com/	9545 Reseda Blvd #16, Northridge, CA 91324, United States	+1 818-341-1884	No
+A & W Seafood Restaurant	https://aandwseafoodnorthridge.com/	9306 Reseda Blvd, Northridge, CA 91324, United States	+1 818-882-6668	mail@burak-aydin.com
+Chipotle Mexican Grill	https://locations.chipotle.com/ca/northridge/19332-nordhoff-st?utm_source=google&utm_medium=yext&utm_campaign=yext_listings	19332 Nordhoff St, Northridge, CA 91324, United States	+1 818-671-2232	ca.1746.NordhoffPlaza@chipotle.com
+Rubio's	https://www.rubios.com/store-locations/california/northridge/northridge?utm_source=gmb&utm_medium=websitelink	19500 Plummer St Suite B-3, Northridge, CA 91324, United States	+1 818-998-6704	No
+Gen Korean BBQ House	http://genkoreanbbq.com/	10151 Reseda Blvd, Northridge, CA 91324, United States	+1 818-709-3932	octopusgroup@octopusrestaurant.com
+Tropical Buffet & Grill	https://www.facebook.com/tropicalbuffetandgrill/	19530 Nordhoff St, Northridge, CA 91324, United States	+1 818-678-6688	No
+Pisco Sour Market & Peruvian Restaurant	http://www.piscosourmarket.com/	19239 Roscoe Blvd, Northridge, CA 91324, United States	+1 818-453-0700	No
+The Habit Burger Grill (Drive-Thru)	https://www.habitburger.com/locations/northridge/	9215 Reseda Blvd, Northridge, CA 91324, United States	+1 818-993-7113	No
+IHOP	https://www.ihop.com/en/restaurants-northridge-ca/9012-tampa-avenue-3527?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places	9012 Tampa Ave, Northridge, CA 91324, United States	+1 818-280-6605	No
+Pho 22	http://www.pho22.com/northridge.html	9651 Reseda Blvd, Northridge, CA 91324, United States	+1 818-341-4022	admin@pho22.com
+Five Guys	https://order.fiveguys.com/menu/northridge/	8850 Tampa Ave, Northridge, CA 91324, United States	+1 818-993-1390	No
+Chipotle Mexican Grill	https://locations.chipotle.com/ca/northridge/9205-reseda-blvd?utm_source=google&utm_medium=yext&utm_campaign=yext_listings	9205 Reseda Blvd, Northridge, CA 91324, United States	+1 818-772-5873	ca.0629.csnorthridge@chipotle.com
+Honeyfish Poke	http://www.honeyfishpoke.com/	8850 Tampa Ave #107, Los Angeles, CA 91324, United States	+1 818-273-7395	No
+All American BBQ	https://www.allamerbbq.com/	18697 Devonshire St, Northridge, CA 91324, United States	+1 818-363-6500	No
+El Torito	https://locations.eltorito.com/store/northridge-2	8855 Tampa Ave, Northridge, CA 91324, United States	+1 818-349-1607	No
+Kopan Sushi & Ramen	http://kopanramen.com/menu/northridge/	19500 Plummer St b1, Northridge, CA 91324, United States	+1 818-960-4233	No
+Del Taco	http://www.deltaco.com/	8941 Corbin Ave, Northridge, CA 91324, United States	+1 818-709-8536	publicrelations@deltaco.com , socialdel@deltaco.com , deltaco@wgiftcard.com
+Burgerim	https://www.burgerim.com/our-locations/northridge/	9034 Tampa Ave, Northridge, CA 91324, United States	+1 818-477-2032	No
+Chop Stop	https://www.chopstop.com/	9225 Reseda Blvd, Northridge, CA 91324, United States	+1 818-477-2966	info@staging2.chopstop.com , accessibility@staging2.chopstop.com
+Castillo	https://www.facebook.com/CastilloMexicanRestaurant	18904 Roscoe Blvd, Northridge, CA 91324, United States	+1 818-772-0901	No
+Rosie's BBQ and Grillery	http://www.rosiesbbq.com/	8930 Corbin Ave, Northridge, CA 91324, United States	+1 818-349-3055	No
+Farmer Boys	http://www.farmerboys.com/northridge-reseda-blvd/	9010 Reseda Blvd, Northridge, CA 91324, United States	+1 818-882-7888	No
+Q & Q Hawaiian B.B.Q	http://www.qqhawaiianbbq.com/	8850 Tampa Ave #104, Northridge, CA 91324, United States	+1 818-882-6789	No
+H2O Sushi & Izakaya	http://h2osushiizakaya.com/	9301 Tampa Ave #144, Northridge, CA 91324, United States	+1 818-700-8300	octopusgroup@octopusrestaurant.com
+Village Tandoor	http://www.northridgevillagetandoor.com/	18530 Devonshire St, Northridge, CA 91324, United States	+1 818-366-2820	No
+Del Taco	http://www.deltaco.com/	19309 Roscoe Blvd, Northridge, CA 91324, United States	+1 818-998-5995	publicrelations@deltaco.com , socialdel@deltaco.com , deltaco@wgiftcard.com
+Las Dunas Peruvian Cuisine	http://lasdunasperuviancuisine.com/	9350 Corbin Ave, Northridge, CA 91324, United States	+1 818-818-5063	lasdunasperuviancuisine@gmail.com
+Red Robin Gourmet Burgers and Brews	https://www.redrobin.com/	9301 Tampa Ave Unit 128, Northridge, CA 91324, United States	+1 818-717-5030	No
+The Flame Broiler	http://www.flamebroilerusa.com/	19350 Nordhoff St, Northridge, CA 91324, United States	+1 818-734-7300	No
+Ubatuba Acai	http://www.ubatubaacai.com/	9667 Reseda Blvd, Northridge, CA 91324, United States	+1 818-960-9090	ubatubaacai@gmail.com
+El Taco Llama.	https://www.facebook.com/pages/El-Taco-Llama/118883068126379	8709 Corbin Ave # B, Northridge, CA 91324, United States	+1 818-885-5918	No
+TacosWay	https://tacosway.com/	8341 Tampa Ave, Northridge, CA 91324, United States	+1 747-202-0441	No
+Jack in the Box	https://locations.jackinthebox.com/us/ca/northridge/9433-reseda-blvd	9433 Reseda Blvd, Northridge, CA 91324, United States	+1 818-885-8261	No
+Potato Corner	http://potatocornerusa.com/locations/	9301 Tampa Ave, Northridge, CA 91324, United States	+1 818-885-9700	contactus@PotatoCornerUSA.com
+Subway	https://order.subway.com/en-us/restaurant/51680/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=51680&utm_campaign=evergreen-2020	18545 Roscoe Blvd, Northridge, CA 91324, United States	+1 818-280-3090	No
+Baja Fresh	http://www.bajafresh.com/stores/mexican-food-northridge/30690	9159 Reseda Blvd, Northridge, CA 91324, United States	+1 818-341-4575	clubbaja@kahalamgmt.com , customerservice@kahalamgmt.com
+Xevichez sushi bar	http://www.xevichezsushibar.com/	18531 Devonshire St, Northridge, CA 91324, United States	+1 747-239-1904	info@xevichezsushibar.com
+Myungin Dumplings (명인만두)	http://myungindumplings.net/	19520 Nordhoff St #4, Northridge, CA 91324, United States	+1 818-280-6001	myungindumpling@gmail.com
+El Pollo Loco	http://www.elpolloloco.com/locations/store/5737	8301 Reseda Blvd, Northridge, CA 91324, United States	+1 818-886-3157	No
+Black Angus Steakhouse	http://locations.blackangus.com/ll/us/ca/northridge/9145-corbin-avenue?utm_source=MomentFeed_1058	9145 Corbin Ave, Northridge, CA 91324, United States	+1 818-701-1600	guestrelations@blackangus.com , MktAlerts@blackangus.com
+Poke Bar	http://www.ilovepokebar.com/	9301 Tampa Ave FC6, Northridge, CA 91324, United States	+1 818-885-1185	No
+Subway	https://order.subway.com/en-us/restaurant/447/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=447&utm_campaign=evergreen-2020	8866 Corbin Ave, Northridge, CA 91324, United States	+1 818-701-5073	No
+L & L Hawaiian Barbecue	http://hawaiianbarbecue.com/	18657 Devonshire St, Northridge, CA 91324, United States	+1 818-363-8840	No
+Mamicon's Restaurant	http://mamiconsrestaurantcom.com/	8363 Reseda Blvd unit 13, Northridge, CA 91324, United States	+1 818-477-2448	No
+Subway	https://order.subway.com/en-us/restaurant/24279/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=24279&utm_campaign=evergreen-2020	18649 Devonshire St, Northridge, CA 91324, United States	+1 818-363-2138	No
+Little Caesars Pizza	https://littlecaesars.com/en-us/store/6203?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=6203	9000-9020 Reseda Blvd, Northridge, CA 91324, United States	+1 818-349-9200	No
+Bob's Big Boy	http://www.northridgebobsbigboy.com/	8876 Corbin Ave, Northridge, CA 91324, United States	+1 818-772-2627	No
+Outback Steakhouse	https://www.outback.com/	18711 Devonshire St, Northridge, CA 91324, United States	+1 818-366-2341	No
+Urbane Cafe	http://www.urbanecafe.com/	9020 Reseda Blvd, Northridge, CA 91324, United States	+1 818-812-9036	No
+Stone Oven	http://www.stoneoven.com/	9301 Tampa Ave #104, Northridge, CA 91324, United States	+1 818-718-8811	info@stoneoven.com
+Burger King	https://burgerking.com/store-locator/store/restaurant_549	19640 Nordhoff St, Northridge, CA 91324, United States	+1 818-885-9363	No
+Gold Medal Buffet and Grill	https://www.goldmedalbuffet.com/	9224 Reseda Blvd, Northridge, CA 91324, United States	+1 818-998-3688	goldmedalbuffet@gmail.com
+McDonald's	https://www.mcdonalds.com/us/en-us/location/CA/NORTHRIDGE/9101-RESEDA-BLVD/7074.html?cid=RF:YXT:GMB::Clicks	9101 Reseda Blvd, Northridge, CA 91324, United States	+1 818-886-8203	No
+Wingstop	https://www.wingstop.com/location/wingstop-605-northridge-ca-91324/menu?utm_source=google&utm_medium=distrib&utm_campaign=google-distrib	9041 Reseda Blvd, Northridge, CA 91324, United States	+1 818-998-9464	No
+Chuck E. Cheese	https://locations.chuckecheese.com/us/ca/northridge/8425-reseda-blvd.	8425 Reseda Blvd, Northridge, CA 91324, United States	+1 818-993-3447	GuestRelations@cecentertainment.com , media@cecentertainment.com
+Bar Louie - Northridge Fashion Center	https://www.barlouie.com/locations/us/ca/northridge/northridge-fashion-center?utm_source=other&utm_medium=listings	9301 Tampa Avenue Suite# 218, Northridge, CA 91324, United States	+1 747-237-3500	No
+Burger King	https://burgerking.com/store-locator/store/restaurant_2817	8500 Reseda Blvd, Northridge, CA 91324, United States	+1 818-349-1985	No
+Dunkin'	https://smart.link/abu8tr12sc1y6?utm_source=google&utm_medium=local&utm_campaign=gmbwebsiteorder&utm_content=354575	9355 Reseda Blvd, Northridge, CA 91324, United States	+1 818-341-3333	No
+Jamba	https://www.jamba.com/ca/northridge/plaza-di-northridge-111?utm_source=google&utm_medium=organic&utm_campaign=localmaps	19500 Plummer Street #F-3, Northridge, CA 91324, United States	+1 818-678-6979	No
+Shik Do Rak Northridge	https://shikdorakrestaurant.com/	18434 Devonshire St, Northridge, CA 91325, United States	+1 818-832-7080	No
+Shakey's Pizza Parlor	https://www.shakeys.com/locations/los-angeles/northridge-reseda-pizza-restaurant/	10340 Reseda Blvd, Northridge, CA 91326, United States	+1 818-360-2151	contactus@shakeys.com
+Umai Savory Hot Dogs	https://umaihotdogs.com/	9301 Tampa Ave FC5, Northridge, CA 91324, United States	+1 818-671-0373	info@umaihotdogs.com
+Panda Express	https://www.pandaexpress.com/userlocation/219/CA/Northridge/18427-d-Nordhoff-St	18427-d Nordhoff St, Northridge, CA 91325, United States	+1 818-700-2829	No
+Pizza Hut	https://locations.pizzahut.com/ca/northridge/10231-reseda-avenue	10231 Reseda Blvd, Northridge, CA 91324, United States	+1 818-998-4700	No
+Hawaiian Hot Chicken	http://hawaiianhotchicken.square.site/	17646 Lassen St #5, Northridge, CA 91324, United States	+1 818-456-6187	No
+Costco Food Court	http://m.costco.com/WarehouseLocatorView%3FlangId%3D-1%26storeId%3D10301%26catalogId%3D10701	8810 Tampa Ave, Northridge, CA 91324, United States	+1 818-775-2997	No
+Dave & Buster's	https://www.daveandbusters.com/locations/northridge	9301 Tampa Ave Suite 212, Northridge, CA 91324, United States	+1 818-739-3100	No
+Panda Chinese Fast Food	https://myhotwokcafe.com/	8880 Corbin Ave, Northridge, CA 91324, United States	+1 818-349-6699	No
+Rita's Italian Ice & Frozen Custard	http://www.ritasfranchises.com/Northridge	9002 Tampa Ave, Northridge, CA 91324, United States	+1 818-998-9444	No
+85°C Bakery Cafe	http://www.85cbakerycafe.com/	9046 Tampa Ave, Northridge, CA 91324, United States	+1 818-576-9885	customerservice@85cbakerycafe.com
+Ben & Jerry’s	https://www.benjerry.com/northridge	9301 Tampa Ave #121, Northridge, CA 91324, United States	+1 818-349-7714	address@email.com
+Jamba	https://www.jamba.com/ca/northridge/devonshire-reseda-sc-163?utm_source=google&utm_medium=organic&utm_campaign=localmaps	18506 Devonshire St, Northridge, CA 91324, United States	+1 818-885-5801	No
+Presto Pasta	http://prestopasta.com/	17923 Chatsworth St #5606, Granada Hills, CA 91344, United States	+1 818-360-7737	newburypark@prestopasta.com , valencia@prestopasta.com , simivalley@prestopasta.com , granadahills@prestopasta.com , prestopasta@prestopasta.com , santabarbara@prestopasta.com , ventura@prestopasta.com , camarillo@prestopasta.com
+Auntie Anne's	https://www.auntieannes.com/ca/northridge/143-1?utm_source=google&utm_medium=organic&utm_campaign=localmaps	9301 Tampa Ave Space 152, Northridge, CA 91324, United States	+1 818-998-8532	No
+Mimi's Cafe	https://www.mimiscafe.com/locations/northridge/	19710 Nordhoff Pl, Chatsworth, CA 91311, United States	+1 818-717-8334	GuestRelations@mimiscafe.com , MediaRelations@mimiscafe.com
+Mis Raices Salvadoran Restaurant	http://misraicessalvadoreanrestaurant.com/	7539 Reseda Blvd, Reseda, CA 91335, United States	+1 818-708-1205	No
+The Habit Burger Grill	https://www.habitburger.com/locations/chatsworth/	9243 Winnetka Ave, Chatsworth, CA 91311, United States	+1 818-773-0257	No
+Panda Express	https://www.pandaexpress.com/userlocation/426/CA/Granada-Hills/18080-Chatsworth-St-b	18080 Chatsworth St #b, Granada Hills, CA 91344, United States	+1 818-366-8632	No
+Del Taco	http://www.deltaco.com/	18070 Chatsworth St, Granada Hills, CA 91344, United States	+1 818-832-6373	publicrelations@deltaco.com , socialdel@deltaco.com , deltaco@wgiftcard.com
+Yoshinoya Nordhoff & Reseda	http://www.yoshinoyaamerica.com/	18441 Nordhoff St, Northridge, CA 91325, United States	+1 818-885-5133	No
+Jack in the Box	https://locations.jackinthebox.com/us/ca/granada-hills/17744-chatsworth-st	17744 Chatsworth St, Granada Hills, CA 91344, United States	+1 818-363-9013	No
+Jersey Mike's Subs	https://www.jerseymikes.com/20026	19350 C Nordhoff St, Northridge, CA 91324, United States	+1 818-886-5800	shorepoints@jerseymikes.com
+Poquito Mas	http://www.poquitomas.com/	9229 Winnetka Avenue # A # A, Chatsworth, CA 91311, United States	+1 818-775-1555	No
+Pieology Pizzeria Granada Village	https://www.pieology.com/locations/CA/granada-village	17943 Chatsworth St Unit 30A, Granada Hills, CA 91344, United States	+1 818-814-9454	No
+Vallarta Supermarkets	https://vallartasupermarkets.com/en/store-locations/Northridge-5	8453 Reseda Blvd, Northridge, CA 91324, United States	+1 818-576-1280	info@vallartasupermarkets.com , maricela@vpepr.com
+Applebee's Grill + Bar	https://www.applebees.com/en/restaurants-chatsworth-ca/9255-winnetka-ave-76050?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places	9255 Winnetka Ave, Chatsworth, CA 91311, United States	+1 818-885-6519	No
+Ali Baba Persian Restaurant	http://orderalibabapersianrestaurant.com/	17513 Chatsworth St, Granada Hills, CA 91344, United States	+1 818-832-0335	No
+Sansai Japanese Grill	http://www.sansaigrill.com/	9243 Winnetka Ave, Chatsworth, CA 91311, United States	+1 818-734-0005	No
+Villa Italian Kitchen	https://locations.villaitaliankitchen.com/us/ca/northridge/9301-tampa-ave.html?utm_source=Yext&utm_medium=Local&utm_campaign=Website&y_source=1_MzQwMzEyOS03MTUtbG9jYXRpb24ud2Vic2l0ZQ==	9301 Tampa Ave Suite Fc4, Northridge, CA 91324, United States	+1 661-803-6812	WeCare@villarestaurantgroup.com
+Taco Bell	https://locations.tacobell.com/ca/northridge/18100-parthenia-st.html?utm_source=yext&utm_campaign=googlelistings&utm_medium=referral&utm_term=003114&utm_content=website	18100 Parthenia St, Northridge, CA 91325, United States	+1 818-772-0413	No
+Panda Express	https://www.pandaexpress.com/userlocation/1473/CA/Northridge/18111-Nordhoff-St	18111 Nordhoff St, Northridge, CA 91330, United States	+1 818-727-7226	No
+Denny's	https://locations.dennys.com/CA/RESEDA/246789?utm_source=yext&utm_medium=local-listing&utm_campaign=yext-listing	7600 Reseda Blvd, Reseda, CA 91335, United States	+1 818-996-4481	No
+Subway	https://order.subway.com/en-us/restaurant/54739/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=54739&utm_campaign=evergreen-2020	9301tampa Ave Space 00103, Northridge, CA 91324, United States	+1 818-775-5750	No
+House Of Shish Kabob	http://houseofshishkabob.net/	10224 Mason Ave, Chatsworth, CA 91311, United States	+1 818-700-0111	ssambangi@clorder.com
+Burger King	https://burgerking.com/store-locator/store/restaurant_4287	18111 Nordhoff St, Northridge, CA 91330, United States	+1 818-677-3590	No
+Steak Escape	https://steakescape.com/menu/	9301 Tampa Ave, Northridge, CA 91324, United States	+1 818-727-7681	No
+Carl's Jr.	https://www.carlsjr.com/?utm_source=Yext&utm_medium=Visit%20Website&utm_campaign=Homepage	18090 W, Chatsworth St, Granada Hills, CA 91344, United States	+1 818-360-6125	mediarelations@ckr.com
+Chinese Gourmet Express	http://www.chinese-gourmet-express.com/	9301 Tampa Ave FC7, Northridge, CA 91324, United States	+1 818-886-3108	No
+Pizza Hut	https://locations.pizzahut.com/ca/reseda/19371-a-saticoy-st	19371-A, Saticoy St Suite A C-12, Reseda, CA 91335, United States	+1 818-998-5600	No
+Mandarin King	https://mandarinkingtogo.com/	17092 Devonshire St, Northridge, CA 91325, United States	+1 818-366-8999	No
+Chan's Mongolian	http://www.changsmongoliangrill.com/	9301 Tampa Ave, Northridge, CA 91324, United States	+1 818-886-3024	No
+Jack in the Box	https://locations.jackinthebox.com/us/ca/northridge/11216-tampa-ave	11216 Tampa Ave, Northridge, CA 91326, United States	+1 818-368-9941	No
+Baja Fresh	http://www.bajafresh.com/stores/mexican-food-porter-ranch/30133	19711 # C, Rinaldi St, Northridge, CA 91326, United States	+1 818-831-3100	clubbaja@kahalamgmt.com , customerservice@kahalamgmt.com
+TGI Fridays	https://locations.tgifridays.com/ca/northridge/19855-rinaldi-st.html?utm_source=google&utm_medium=local&utm_campaign=google-local	19855 Rinaldi St, Northridge, CA 91326, United States	+1 818-831-2324	No
+Carl's Jr.	https://www.carlsjr.com/?utm_source=Yext&utm_medium=Visit%20Website&utm_campaign=Homepage	20105 Saticoy St, Canoga Park, CA 91306, United States	+1 818-709-0689	mediarelations@ckr.com
+Baja Fresh	http://www.bajafresh.com/stores/mexican-food-granada-hills/30439	16912 Devonshire St, Granada Hills, CA 91344, United States	+1 818-360-1472	clubbaja@kahalamgmt.com , customerservice@kahalamgmt.com
+Jamba Granada Village	https://www.jamba.com/ca/los-angeles/granada-village-1605?utm_source=google&utm_medium=organic&utm_campaign=localmaps	18145 Chatsworth St, Granada Hills, CA 91344, United States	+1 818-360-3922	No
+Jersey Mike's Subs	https://www.jerseymikes.com/20038	Shopping Center, 18131 Chatsworth Street Granada Village, Granada Hills, CA 91344, United States	+1 818-923-5080	shorepoints@jerseymikes.com
+Chipotle Mexican Grill	https://locations.chipotle.com/ca/granada-hills/16959-devonshire-st?utm_source=google&utm_medium=yext&utm_campaign=yext_listings	16959 Devonshire St, Granada Hills, CA 91344, United States	+1 747-300-4570	ca.1681.GranadaHills@chipotle.com
+Del Taco	http://www.deltaco.com/	19644 Vanowen St, Reseda, CA 91335, United States	+1 818-345-3376	publicrelations@deltaco.com , socialdel@deltaco.com , deltaco@wgiftcard.com
+Five Guys	https://order.fiveguys.com/menu/five-guys-4001	8400 Balboa Blvd, Northridge, CA 91329, United States	+1 818-221-6966	No
+Taco Bell	https://locations.tacobell.com/ca/northridge/9825-balboa-blvd.html?utm_source=yext&utm_campaign=googlelistings&utm_medium=referral&utm_term=028467&utm_content=website	9825 Balboa Blvd, Northridge, CA 91325, United States	+1 818-349-0745	No
+Chipotle Mexican Grill	https://locations.chipotle.com/ca/northridge/8420-balboa-blvd?utm_source=google&utm_medium=yext&utm_campaign=yext_listings	8420 Balboa Blvd #110, Northridge, CA 91325, United States	+1 818-891-1034	CA.3026.NorthHills@chipotle.com
+Popeyes Louisiana Kitchen	https://www.popeyes.com/store-locator/store/restaurant_82332	18300 Vanowen St, Reseda, CA 91335, United States	+1 818-774-9581	No
+KFC	https://locations.kfc.com/ca/northridge/8644-balboa-blvd	8644 Balboa Blvd, Northridge, CA 91325, United States	+1 818-885-9554	No
+Denny's	https://locations.dennys.com/CA/NORTHRIDGE/247142?utm_source=yext&utm_medium=local-listing&utm_campaign=yext-listing	17018 Devonshire St, Northridge, CA 91325, United States	+1 818-363-9400	No
+Carl's Jr.	https://www.carlsjr.com/?utm_source=Yext&utm_medium=Visit%20Website&utm_campaign=Homepage	18756 Sherman Way, Reseda, CA 91335, United States	+1 818-881-8775	mediarelations@ckr.com
+ATHENIAN GRILL	http://atheniangrillreseda.com/	7042 Reseda Blvd, Reseda, CA 91335, United States	+1 818-345-8445	atheniangrillreseda@yahoo.com
+Jack in the Box	https://locations.jackinthebox.com/us/ca/northridge/8322-balboa-ave	8322 Balboa Blvd, Northridge, CA 91325, United States	+1 818-345-6492	No
+Panda Express	https://www.pandaexpress.com/userlocation/1014/CA/Northridge/17056-Devonshire-St	17056 Devonshire St, Northridge, CA 91325, United States	+1 818-360-9091	No
+Panera Bread	https://locations.panerabread.com/ca/granada-hills/16836-w-devonshire-st.html?utm_medium=display-ad&utm_source=paid-digital&utm_campaign=yext&utm_content=local-search	16836 W Devonshire St, Granada Hills, CA 91344, United States	+1 818-900-0646	No
+Carl's Jr.	https://www.carlsjr.com/?utm_source=Yext&utm_medium=Visit%20Website&utm_campaign=Homepage	16815 Devonshire St, Granada Hills, CA 91344, United States	+1 818-368-5177	mediarelations@ckr.com
+Taco Bell	https://locations.tacobell.com/ca/canoga-park/8220-de-soto-ave.html?utm_source=yext&utm_campaign=googlelistings&utm_medium=referral&utm_term=028473&utm_content=website	8220 De Soto Ave, Canoga Park, CA 91304, United States	+1 818-341-9505	No
+The Cheesecake Factory	https://locations.thecheesecakefactory.com/ca/canoga-park-170.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places	6600 Topanga Canyon Blvd Ste 51, Canoga Park, CA 91303, United States	+1 818-883-9900	No
+Taco Bell	https://locations.tacobell.com/ca/chatsworth/21120-devonshire-street.html?utm_source=yext&utm_campaign=googlelistings&utm_medium=referral&utm_term=000286&utm_content=website	21120 Devonshire St, Chatsworth, CA 91311, United States	+1 818-341-2688	No
+Jersey Mike's Subs	https://www.jerseymikes.com/20267	8420 Balboa Blvd Unit 112, Northridge, CA 91325, United States	+1 818-960-0996	shorepoints@jerseymikes.com
+Ninong's Cafe	http://www.ninongscafe.com/	19524-3 Nordhoff St, Northridge, CA 91324, United States	+1 818-745-9019	hello@ninongscafe.com
+HoneyBaked Ham	http://www.shophoneybaked.com/	18540 Devonshire St, Northridge, CA 91324, United States	+1 818-368-4884	No
+Jersey Mike's Subs	https://www.jerseymikes.com/20311	20101 West, Rinaldi St #110, Porter Ranch, CA 91326, United States	+1 818-488-7588	shorepoints@jerseymikes.com
+The Ridgeview	https://www.ridgeviewapartmentliving.com/?utm_source=GMB&utm_medium=organic	19039 Nordhoff St, Northridge, CA 91324, United States	+1 818-428-1685	No
+Dreamy Creations	http://dreamycreations.com/	19441 Business Center Drive #114, Northridge, CA 91324, United States	+1 818-882-0120	email@example.com
+Neon Retro Arcade Northridge	http://neonretroarcade.com/	8943 Reseda Blvd, Northridge, CA 91324, United States	+1 818-818-5036	info@neonretroarcade.com , test@mailbox.com
+Pizza Hut	https://locations.pizzahut.com/ca/chatsworth/20901-lassen-st	20901 Lassen St, Chatsworth, CA 91311, United States	+1 818-772-0700	No
+Western Bagel	http://www.westernbagel.com/	19500 Plummer St F2, Northridge, CA 91324, United States	+1 818-727-9404	No
+Blu Jam Cafe	http://www.blujamcafe.com/	15045 Ventura Blvd, Sherman Oaks, CA 91403, United States	+1 818-906-1955	No
+Lotus Vegan	http://lotusveganla.com/	4715 Lankershim Blvd, North Hollywood, CA 91602, United States	+1 818-760-8088	info@lotusveganla.com
+Asian Spot	http://www.asianspothalal.com/	8327 Tampa Ave, Northridge, CA 91324, United States	+1 818-709-6328	No
+Santuari Restaurant	https://www.santuarirestaurant.com/	6711 Forest Lawn Dr, Los Angeles, CA 90068, United States	+1 323-902-9700	No
+PAPAKUNA AUTHENTIC PERUVIAN CUISINE	http://picanteauthenticperuvian.com/	15030 #24, Ventura Blvd, Sherman Oaks, CA 91403, United States	+1 818-995-6466	jenniporto14@gmail.com
+Santuari Restaurant	https://www.santuarirestaurant.com/	6711 Forest Lawn Dr, Los Angeles, CA 90068, United States	+1 323-902-9700	No
+PAPAKUNA AUTHENTIC PERUVIAN CUISINE	http://picanteauthenticperuvian.com/	15030 #24, Ventura Blvd, Sherman Oaks, CA 91403, United States	+1 818-995-6466	jenniporto14@gmail.com
+Cold Stone Creamery	http://www.coldstonecreamery.com/stores/20144	19500 Plummer St Unit F5, Northridge, CA 91324, United States	+1 818-700-1443	mycoldstoneclub@kahalamgmt.com
+Wirtshaus German Restaurant & Beer Garden	http://www.wirtshausla.com/	345 N La Brea Ave, Los Angeles, CA 90036, United States	+1 323-931-9291	prost@wirtshausla.com , info@wirtshausla.com
+Republique	http://www.republiquela.com/	624 South La Brea Ave, Los Angeles, CA 90036, United States	+1 310-362-6115	info@republiquela.com
+Brent's Delicatessen & Restaurant	http://brentsdeli.com/	2799 Townsgate Rd, Westlake Village, CA 91361, United States	+1 805-557-1882	No
+North Italia	https://www.northitalia.com/locations/santa-monica-ca/	1442 2nd St, Santa Monica, CA 90401, United States	+1 310-382-2460	No
+Mr. Masala	http://www.mrmasalala.com/	949 S Figueroa St, Los Angeles, CA 90015, United States	+1 213-265-7730	No
+Connie and Ted's	http://www.connieandteds.com/	8171 Santa Monica Blvd, West Hollywood, CA 90046, United States	+1 323-848-2722	info@connieandteds.com
+Kali	http://www.kalirestaurant.com/	5722 Melrose Ave, Los Angeles, CA 90038, United States	+1 323-871-4160	info@kalirestaurant.com
+Crustacean Beverly Hills	http://www.crustaceanbh.com/	468 N Bedford Dr, Beverly Hills, CA 90210, United States	+1 310-205-8990	GiftCertificatesCBH@Houseofan.com , ANtheGO@houseofan.com , bookcbh@houseofan.com
+The Dresden Restaurant & Lounge	http://www.thedresden.com/	1760 N Vermont Ave, Los Angeles, CA 90027, United States	+1 323-665-4294	No
+The Cat & Fiddle Pub & Restaurant	https://www.thecatandfiddle.com/	742 N Highland Ave, Los Angeles, CA 90038, United States	+1 323-468-3800	catandfiddlerestaurant@gmail.com
+Perch	http://perchla.com/	448 S Hill St, Los Angeles, CA 90013, United States	+1 213-802-1770	info@perchla.com
+Artisan Square Apartments	http://www.equityapartments.com/los-angeles/northridge/artisan-square-apartments	19200 Nordhoff St, Northridge, CA 91324, United States	+1 818-772-0833	username@example.com
+Asian Spot	http://www.asianspothalal.com/	8327 Tampa Ave, Northridge, CA 91324, United States	+1 818-709-6328	No
+AKASHA	https://www.akasharestaurant.com/	9543 Culver Blvd, Culver City, CA 90232, United States	+1 310-845-1700	catering@akasharestaurant.com
+Howlin' Ray's	http://www.howlinrays.com/	727 N Broadway #128, Los Angeles, CA 90012, United States	+1 213-935-8399	hello@howlinrays.com
+Rossoblu	http://rossoblula.com/	CITY MARKET SOUTH, 1124 San Julian St, Los Angeles, CA 90015, United States	+1 213-749-1099	info@rossoblula.com , INFO@ROSSOBLULA.COM
+Westfield Valencia Town Center	http://www.westfield.com/valencia/	24201 West, Valencia Blvd, Valencia, CA 91355, United States	+1 661-254-0213	USMedia@urw.com
+Devonshire-Reseda Shopping Center	http://www.devonshirereseda.com/#	18601-18711, 18569 Devonshire St, Northridge, CA 91324, United States	+1 714-956-3411	No
+Super King Markets	http://www.superkingmarkets.com/	19500 Plummer St, Northridge, CA 91324, United States	+1 818-350-5970	mllegeorgesand@gmail.com
+El Pescador	https://www.elpescadorrestaurants.com/	5230 N Figueroa St, Los Angeles, CA 90042, United States	+1 323-255-8164	No
+Pez Cantina	http://www.pezcantina.com/	401 S Grand Ave, Los Angeles, CA 90071, United States	+1 213-258-2280	info@pezcantina.com , INFO@PEZCANTINA.COM
+Nothing Bundt Cakes	http://nothingbundtcakes.com/bakery/CA/granada-hills?utm_source=google&utm_medium=gmb	18011 Chatsworth St, Granada Hills, CA 91344, United States	+1 818-643-2332	granadahills@nothingbundtcakes.com
+Vons	https://local.vons.com/ca/northridge/9119-reseda-blvd.html?utm_source=G&utm_medium=Maps&utm_campaign=G+Places	9119 Reseda Blvd, Northridge, CA 91324, United States	+1 818-349-2494	No
+Mr. Masala	http://www.mrmasalala.com/	949 S Figueroa St, Los Angeles, CA 90015, United States	+1 213-265-7730	No
+Slater's 50/50	https://slaters5050.com/	24201 Valencia Blvd Unit 101, Valencia, CA 91355, United States	+1 661-218-5050	No
+The Highlight Room	http://thehighlightroom.com/	6417 Selma Ave, Los Angeles, CA 90028, United States	+1 323-366-8007	highlightroomlainfo@taogroup.com
+The Whale & Ale	http://www.whaleandale.com/	327 W 7th St, San Pedro, CA 90731, United States	+1 310-832-0363	lara@whaleandale.com
+Korner Knafeh	https://korner-knafeh.ueniweb.com/?utm_campaign=gmb	9310 Reseda Blvd, Northridge, CA 91324, United States	+1 818-601-9151	kornerknafeh@gmail.com
+Mikuni American Corporation	http://www.mikuni.com/	8910 Mikuni Ave, Northridge, CA 91324, United States	+1 818-885-1242	No
+Wingstop	https://www.wingstop.com/location/wingstop-563-panorama-city-ca-91402/menu?utm_source=google&utm_medium=distrib&utm_campaign=google-distrib	14508 Nordhoff St, Panorama City, CA 91402, United States	+1 818-894-9464	No

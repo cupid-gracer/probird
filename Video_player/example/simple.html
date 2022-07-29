@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery Video Layer Plugin Example</title>
+        <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="../dist/video-layers.structure.css">
+        <link rel="stylesheet" href="../dist/video-layers.theme-default.css">
+        <link rel="stylesheet" href="./main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <style>
+        body { font-family:'Roboto';}
+        </style>
+    </head>
+    <body>
+    <div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="https://www.jqueryscript.net/other/Customizable-Layer-HTML5-Video-jqVideoLayer.html">Download This Plugin</a></li>
+<li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+        <div class="main">
+        <h1>jQuery Video Layer Plugin Example</h1>
+            <video width="600" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                Your browser does not support HTML5 video.
+            </video>
+            <div>
+                <div id="external-layer-1" class="layer">
+                    First Layer in other container
+                </div>
+                <div id="external-layer-2" class="layer">
+                    Second Layer in other container
+                </div>
+            </div>
+        </div>
+        <div id="layer-img" class="layer">
+            <img src="./image.jpg">
+        </div>
+        <script src="../dist/jquery.video-layers.js"></script>
+        <script>
+            $(function(){
+                $("video").videoLayers({
+                    layers:[
+                        {
+                            content:"jQueryScript.Net",
+                            position:[25,25],
+                            start:1,
+                            stop:4
+                        },
+                        {
+                            element:"#external-layer-1",
+                            appendToLayers:false,//by default the layers are appended to the layer container
+                            start:1,
+                            stop:4,
+                            show:{effect:"fade",duration:1000},
+                            hide:{effect:"fade",duration:1000}
+                        },
+                        {
+                            element:"#layer-img",
+                            cssClass:"addThisClass andThisOne c-video-layers__layer--strip",
+                            styles:{
+                                width:"50%"
+                            },
+                            position:{
+                                my:"center",
+                                to:"center"
+                            },
+                            start:5,
+                            stop:10,
+                            show:{effect:"fade",duration:1000},
+                            hide:{effect:"blind",duration:500}
+                        },
+                        {
+                            element:"#external-layer-2",
+                            appendToLayers:false,//by default the layers are appended to the layer container
+                            start:5,
+                            stop:10,
+                            show:{effect:"fade",duration:1000},
+                            hide:{effect:"fade",duration:1000}
+                        }
+                    ]
+                }).on(jqVideoLayers.VideoLayersEvents.beforeShowLayer,(e,data)=>{
+                    console.log("beforeShow",data.layer);
+                }).on(jqVideoLayers.VideoLayersEvents.showLayer,(e,data)=> {
+                    console.log("showLayer", data.layer);
+                }).on(jqVideoLayers.VideoLayersEvents.beforeHideLayer,(e,data)=>{
+                    console.log("beforeHideLayer",data.layer);
+                }).on(jqVideoLayers.VideoLayersEvents.hideLayer,(e,data)=> {
+                    console.log("hideLayer", data.layer);
+                })
+            });
+        </script>
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </body>
+</html>

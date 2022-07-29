@@ -1,0 +1,6 @@
+Title	Site URL	Phone	Address	Email
+Rapidbike Australia	http://www.rapidbike.com.au/	1/48 Kremzow Rd, Brendale QLD 4500, Australia	+61 7 3881 3999	email@example.com
+Costco Wholesale	https://www.costco.com.au/	17-39 Cook Ct, North Lakes QLD 4509, Australia	+61 7 3482 8600	No
+Fulcrum Suspensions Springwood	https://fulcrumsuspensions.com.au/	3335 Pacific Hwy, Slacks Creek QLD 4127, Australia	+61 7 3808 3266	No
+LG Electronics	http://www.lg.com/au	2 Wonderland Dr, Eastern Creek NSW 2766, Australia	+61 2 8805 4000	No
+HomeCare Repair Australia	http://www.homecarerepairaustralia.com.au/	1/398 The Boulevarde, Kirrawee NSW 2232, Australia	+61 1800 155 166	No
