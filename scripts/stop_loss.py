@@ -1,8 +1,13 @@
+
 import mysql.connector
 import pandas as pd
 import json
 from datetime import datetime
 import math
+from get_sunset_v3 import sun
+import numpy as np
+
+capture_time = 16 # The time to capture image each wind turbine
 
 def getDataFromDB(cursor, date, type = 'probird'):
     sql = ''
@@ -18,6 +23,7 @@ def getDataFromDB(cursor, date, type = 'probird'):
     if type == 'probird':
         wind_turbine_id = -1
         _data = []
+        records = sorted(records, key=lambda x: x[3], reverse=False)
         for item in records:
             if item[3] == wind_turbine_id:
                 _data.append([str(item[1])[:19], item[2]])
@@ -28,11 +34,11 @@ def getDataFromDB(cursor, date, type = 'probird'):
                 wind_turbine_id = item[3]
                 _data.append([str(item[1])[:19], item[2]])
         _data = sorted(_data, key=lambda x: datetime.strptime(x[0], '%Y-%m-%d %H:%M:%S'), reverse=False)
-        print(_data)
         result.append({'wind_turbine_id': wind_turbine_id, 'data': _data})
     elif type == 'wind_turbine':
         wind_turbine_id = -1
         _data = []
+        records = sorted(records, key=lambda x: x[2], reverse=False)
         for item in records:
             if item[2] == wind_turbine_id:
                 _data.append([str(item[1])[:19], float(item[3]), float(item[4])])
@@ -42,6 +48,7 @@ def getDataFromDB(cursor, date, type = 'probird'):
                     _data = []
                 wind_turbine_id = item[2]
                 _data.append([str(item[1])[:19], float(item[3]), float(item[4])])
+        _data = sorted(_data, key=lambda x: datetime.strptime(x[0], '%Y-%m-%d %H:%M:%S'), reverse=False)
         result.append({'wind_turbine_id': wind_turbine_id, 'data': _data})
     # print(json.dumps(result, indent=4, sort_keys=True))
     return result, existData
@@ -52,9 +59,12 @@ def genDateRange(start, end, freq):
 
 
 def getDiffSeconds(start, end):
+    start = str(start)
+    end = str(end)
     d1 = datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
     d2 = datetime.strptime(end, "%Y-%m-%d %H:%M:%S")
-    delta = abs((d2 - d1).seconds)
+    # delta = abs((d2 - d1).seconds)
+    delta = (d2 - d1).seconds
     return delta
 
 
@@ -160,33 +170,135 @@ def processingTurbineData(data_wind_turbine):
         turbine_data.append([wind_turbine_id, _power, _wind_speed, _rpm])
     return turbine_data
 
+
+def processingImageNumber(date, wt_cams):
+    sunrise, sunset = sun.day(datetime.now(), date)
+
+    sql = "SELECT Time_Stamp FROM medias WHERE DATE(Time_Stamp) = '" + date + "' ORDER BY `ID` ASC LIMIT 1;"
+    cursor.execute(sql)
+    _r = cursor.fetchall()
+    if len(_r) > 0:
+        start_time = _r[0][0]
+    else:
+        start_time = sunrise
+
+    sql = "SELECT Time_Stamp FROM medias WHERE DATE(Time_Stamp) = '" + date + "' ORDER BY `ID` DESC LIMIT 1;"
+    cursor.execute(sql)
+    _r = cursor.fetchall()
+    if len(_r) > 0:
+        end_time = _r[0][0]
+    else:
+        end_time = sunset
+
+    
+    start_time = start_time if getDiffSeconds(start_time, sunrise) > 0 else sunrise
+    end_time = end_time if getDiffSeconds(end_time, sunset) < 0 else sunset
+    day_time = getDiffSeconds(start_time, end_time)
+    expect_number_each_cam = math.ceil(day_time/capture_time)
+
+
+    sql = "SELECT count(*) as img_number, WT_pack_ID FROM medias  WHERE DATE(Time_Stamp) = '" + date + "' GROUP BY WT_pack_ID"
+    cursor.execute(sql)
+    medias = cursor.fetchall()
+    
+    result = []
+
+    for wt_cam in wt_cams:
+        wt_id = wt_cam[0]
+        cam_number = len(wt_cam[1])
+        expected_img_number = expect_number_each_cam * cam_number
+        img_number = 0
+        for wt_pack_id in wt_cam[1]:
+            img_number = img_number + next((x[0] for x in medias if x[1] == wt_pack_id),0)
+        result.append([wt_id, expected_img_number, img_number])
+    return result
+
+
+def getRelationWTPackAndWT():
+    sql = "SELECT * FROM wt_in_wind_turbine_pack"
+    cursor.execute(sql)
+    records = cursor.fetchall()
+    result = []
+    wt_id = -1
+    _r = []
+    records = sorted(records, key = lambda x: x[2], reverse=False)
+    for row in records:
+        if wt_id == row[2]:
+            _r.append(row[1])
+        else:
+            if not wt_id == -1:
+                result.append([wt_id, _r])
+                _r = []
+            _r.append(row[1])
+            wt_id = row[2]
+    result.append([wt_id, _r])
+    return result
+
+
+def processingRowNumber(date):
+    sql = "SELECT Time_Stamp, Wind_Turbine_ID FROM wind_turbine_data1 WHERE DATE(Time_Stamp) = '" + date +"' GROUP BY Time_Stamp, Wind_Turbine_ID ORDER BY `ID` ASC;"
+    cursor.execute(sql)
+    rows = cursor.fetchall()
+    sunrise, sunset = sun.day(datetime.now(), date)
+    if len(rows) > 0:
+        start_time = rows[0][0]
+        end_time = rows[-1][0]
+    else:
+        start_time = sunrise
+        end_time = sunset
+    start_time = start_time if getDiffSeconds(start_time, sunrise) > 0 else sunrise
+    end_time = end_time if getDiffSeconds(end_time, sunset) < 0 else sunset
+    expect_row_number = getDiffSeconds(start_time, end_time)
+    
+    list_wt = np.array(rows)
+    list_wt = list_wt[:, 1]
+    # wt_ids = set(list_wt)
+    # wt_ids = sorted(wt_ids, key=lambda x: x, reverse=False)
+
+    (unique, counts) = np.unique(list_wt, return_counts=True)
+    frequencies = np.asarray((unique, counts)).T
+
+    return frequencies, expect_row_number
+
 try:
+
+    
     # DB config
     connection = mysql.connector.connect(host='localhost', database='capespigne_probird', user='root', password='')
+    # connection = mysql.connector.connect(host='localhost', port=3306, database='capespigne_probird', user='sol', password='6eu21pt7')
     cursor = connection.cursor()
+    
+    # processingRowNumber('2022-04-01')
+    # exit()
 
     # Date Generate
-    dates = genDateRange('2022-04-02', '2022-04-02', 'd')
+    dates = genDateRange('2022-04-01', '2022-06-30', 'd')
+
+    # Get relations between WT pack and WT
+    wt_cams = getRelationWTPackAndWT()
     # Loop in dates
     for date in dates:
         date = str(date)[:10]
         print('------------   ' + date + '  ------------')
         print('\tfetching data from db...')
         data_probird_order, probird_exist = getDataFromDB(cursor, date, 'probird')
-        print(data_probird_order)
-        # data_wind_turbine, wind_turbine_exist = getDataFromDB(cursor, date, 'wind_turbine')
+        data_wind_turbine, wind_turbine_exist = getDataFromDB(cursor, date, 'wind_turbine')
         if not wind_turbine_exist:
+            print('\tno data skiped...')
             continue
 
         print('\tcalculating...')
         stop_list, stop_number, uptime, downtime = getDowntime(data_probird_order)
-        print(stop_list)
-        break
         print('\tstop_list, stop_number, uptime, downtime  done.')
         loss_power = getLossPower(stop_list, data_wind_turbine)
         print('\tloss_power done.')
         turbine_data = processingTurbineData(data_wind_turbine)
         print('\tturbine_data done.')
+        img_numbers = processingImageNumber(date, wt_cams)
+        print('\timage number done.')
+        row_numbers, expect_row_number = processingRowNumber(date)
+        print('\trow number done.')
+
         print('\tstoring result into db...')
         for turbine_item in turbine_data:
             wind_turbine_id = turbine_item[0]
@@ -194,13 +306,20 @@ try:
             avg_wind_speed = turbine_item[2]
             avg_rpm = turbine_item[3]
             loss_power_amount = next((x[1] for x in loss_power if x[0] == wind_turbine_id),0)
-            _uptime = next((x[1] for x in uptime if x[0] == wind_turbine_id),0)
+            # _uptime = next((x[1] for x in uptime if x[0] == wind_turbine_id),0)
+            _uptime = 24 * 3600
             _downtime = next((x[1] for x in downtime if x[0] == wind_turbine_id),0)
             _stop_number = next((x[1] for x in stop_number if x[0] == wind_turbine_id),0)
+            _img = next((x for x in img_numbers if x[0] == wind_turbine_id),0)
+            expected_img_number = _img[1]
+            img_number = _img[2]
+            _row_number = next((x for x in row_numbers if x[0] == wind_turbine_id),0)
+            _row_number = _row_number[1]
 
-            sql = "INSERT INTO statistics (wind_turbine_id, date, expect_power_amount, loss_power_amount, uptime, downtime, stop_number, avg_wind_speed, avg_rpm) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            val = (wind_turbine_id, date, expect_power_amount, loss_power_amount, _uptime, _downtime, _stop_number, avg_wind_speed, avg_rpm)
+            sql = "INSERT INTO statistics (wind_turbine_id, date, expect_power_amount, loss_power_amount, uptime, downtime, stop_number, avg_wind_speed, avg_rpm, expected_img_number, img_number, expect_wt_data_number, wt_data_number) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            val = (wind_turbine_id, date, expect_power_amount, loss_power_amount, _uptime, _downtime, _stop_number, avg_wind_speed, avg_rpm, expected_img_number, img_number, expect_row_number, _row_number)
             cursor.execute(sql, val)
+
         connection.commit()
         
 except mysql.connector.Error as e:

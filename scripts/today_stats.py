@@ -1,4 +1,6 @@
 
+
+
 import mysql.connector
 import pandas as pd
 import json
@@ -251,9 +253,7 @@ def processingRowNumber(date):
     expect_row_number = getDiffSeconds(start_time, end_time)
     
     list_wt = np.array(rows)
-    list_wt = list_wt[:, 1]
-    # wt_ids = set(list_wt)
-    # wt_ids = sorted(wt_ids, key=lambda x: x, reverse=False)
+    list_wt = list_wt[:, 1] 
 
     (unique, counts) = np.unique(list_wt, return_counts=True)
     frequencies = np.asarray((unique, counts)).T
@@ -261,17 +261,15 @@ def processingRowNumber(date):
     return frequencies, expect_row_number
 
 try:
-
-    
     # DB config
     connection = mysql.connector.connect(host='localhost', port=3306, database='capespigne_probird', user='sol', password='6eu21pt7')
     cursor = connection.cursor()
     
-    # processingRowNumber('2022-04-01')
-    # exit()
-
+    # For Cronjob
+    now  = datetime.now()
+    today = str(now)[:10]
     # Date Generate
-    dates = genDateRange('2021-10-12', '2022-08-02', 'd')
+    dates = genDateRange(today, today, 'd')
 
     # Get relations between WT pack and WT
     wt_cams = getRelationWTPackAndWT()
