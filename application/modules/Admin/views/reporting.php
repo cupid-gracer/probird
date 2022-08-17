@@ -97,6 +97,21 @@
     top: 40px;
   }
 
+  .circle{
+    display: none;
+  }
+
+  .range_type{
+    margin-bottom: 15px !important;
+  }
+
+ .range_type li{
+   display: inline-block;
+   margin-right: 10px;
+ }
+
+ 
+
 </style>
 <section>
   <div class="reporting_section">
@@ -106,41 +121,41 @@
     <div class="accordion accordion-toggle-arrow" id="accordionExample1">
       <div class="card">
         <div class="card-header">
-          <div class="card-title" data-toggle="collapse" data-target="#collapseOne1">
-            Global data from the 02/03/2022 to the <?php echo date('d/m/Y') ?>
+          <div id="first-title" class="card-title" data-toggle="collapse" data-target="#collapseOne1">
+            Global data from the <?php echo date('d/m/Y', strtotime($start_date));?> to the <?php echo date('d/m/Y', strtotime($end_date)); ?>
           </div>
         </div>
         <div id="collapseOne1" class="collapse show" data-parent="#accordionExample1">
           <div class="card-body">
             <div class="row" style="border-bottom:1px gray solid">
                 <div class="col-md-4 col-sm-12  inner-row">
-                  <div class="row">
-                    <div class="col-md-12 col-lg-4">
+                  <div  id="first_progress_section" class="row">
+                    <div class="col-md-12 col-lg-4 circle">
                       <div class="circle-parent">
-                        <div id="circle-progress-stop-duration" class="circle-progress" data-percent="90"></div>
+                        <div id="circle-progress-stop-duration" class="circle-progress" data-percent="<?php echo (($stats['uptime'] - $stats['downtime'])/$stats['uptime'])*100?>"></div>
                         <div class="percent_name">
-                          <p>2 h 35 m /</p>
-                          <p>542 h 12 m</p>
+                          <p><?php echo floor($stats['downtime']/3600).' h '. floor(($stats['downtime']/60) %60 ).' m';?>/</p>
+                          <p><?php echo floor($stats['uptime']/3600).' h '. floor(($stats['uptime']/60) %60 ).' m';?></p>
                         </div>
                       </div>
                       <div class="prgress-title">Stop Duration</div>
                     </div>
-                    <div class="col-md-12 col-lg-4">
+                    <div class="col-md-12 col-lg-4 circle">
                       <div class="circle-parent">
-                        <div id="circle-progress-production-loss" class="circle-progress" data-percent="97"></div>
+                        <div id="circle-progress-production-loss" class="circle-progress" data-percent="<?php echo (($stats['EPA'] - $stats['LPA'])/$stats['EPA'])*100?>"></div>
                         <div class="percent_name">
-                          <p>10 MW.h /</p>
-                          <p>1200 MW.h</p>
+                          <p><?php echo floor($stats['LPA']/1000000) > 0 ? floor($stats['LPA']/1000000).' MW.h':floor($stats['LPA']/1000).' KW.h' ;?> /</p>
+                          <p><?php echo floor($stats['EPA']/1000000) > 0 ? floor($stats['EPA']/1000000).' MW.h':floor($stats['EPA']/1000).' KW.h' ;?></p>
                         </div>
                       </div>
                       <div class="prgress-title">Production Loss</div>
                     </div>
-                    <div class="col-md-12 col-lg-4">
+                    <div class="col-md-12 col-lg-4 circle" >
                       <div class="circle-parent">
-                        <div id="circle-progress-sound-duration" class="circle-progress" data-percent="95"></div>
+                        <div id="circle-progress-sound-duration" class="circle-progress" data-percent="<?php echo (($stats['uptime'] - $stats['sound_time'])/$stats['uptime'])*100?>"></div>
                         <div class="percent_name">
-                          <p>8 h 32 m /</p>
-                          <p>542 h 12 m</p>
+                          <p><?php echo floor($stats['sound_time']/3600).' h '. floor(($stats['sound_time']/60) %60 ).' m';?>(*)/</p>
+                          <p><?php echo floor($stats['uptime']/3600).' h '. floor(($stats['uptime']/60) %60 ).' m';?></p>
                         </div>
                       </div>
                       <div class="prgress-title">Sound Duration</div>
@@ -148,51 +163,51 @@
                   </div>
                 </div>
                 <div class="col-md-3 col-sm-12  inner-row">
-                  <div class="row">
-                    <div class="col-md-6">
+                  <div id="second_progress_section" class="row">
+                    <div class="col-md-6 circle">
                       <div class="circle-parent">
-                        <div id="circle-progress-data-availability" class="circle-progress" data-percent="98"></div>
+                        <div id="circle-progress-data-availability" class="circle-progress" data-percent="<?php echo ($stats['img_number']/$stats['expected_img_number'])*100?>"></div>
                         <div class="percent_name">
-                          <p class="percent-value">98%</p>
+                          <p class="percent-value"><?php echo round(($stats['img_number']/$stats['expected_img_number'])*100,1)?>%</p>
                         </div>
                       </div>
-                      <div class="prgress-title">Sound Duration</div>
+                      <div class="prgress-title">Data availability</div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 circle">
                       <div class="circle-parent">
-                        <div id="circle-progress-com-availability" class="circle-progress" data-percent="99"></div>
+                        <div id="circle-progress-com-availability" class="circle-progress" data-percent="<?php echo ($stats['wt_data_number']/$stats['expect_wt_data_number'])*100?>"></div>
                         <div class="percent_name">
-                          <p class="percent-value">99%</p>
+                          <p class="percent-value"><?php echo round(($stats['wt_data_number']/$stats['expect_wt_data_number'])*100,1)?>%</p>
                         </div>
                       </div>
-                      <div class="prgress-title">Sound Duration</div>
+                      <div class="prgress-title">Com availability</div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-5 col-sm-12" style="display: flex; flex-direction:column; justify-content:center; padding-right:5%">
-                  <div class="row">
+                  <div id="third_section" class="row" >
                     <div class="col col-summary">
                       <div class="summary-item">
                         <p>Total detection number : </p>
-                        <p>20140</p>
+                        <p><?php echo $stats['detection_number']?></p>
                       </div>
                       <div class="summary-item">
                         <p>Total stop number : </p>
-                        <p>1568</p>
+                        <p><?php echo $stats['stop_number']?></p>
                       </div>
                       <div class="summary-item">
                         <p>Total sound number : </p>
-                        <p>2548</p>
+                        <p><?php echo $stats['sound_number'] == ""?"0":$stats['sound_number']  ?></p>
                       </div>
                     </div>
                     <div class="col col-summary">
                       <div class="summary-item">
                         <p>Average false negative : </p>
-                        <p>2 %</p>
+                        <p>2 %(*)</p>
                       </div>
                       <div class="summary-item">
                         <p>Average false positive : </p>
-                        <p>12 %</p>
+                        <p>12 %(*)</p>
                       </div>
                     </div>
                   </div>
@@ -212,6 +227,24 @@
               </div>
             </div>
           </div>
+          <div id="first_section_loading"  class="loading-bar">
+            <div class="circle-wrap">
+              <div class="circle" style="display: block;">
+                <div class="mask full">
+                  <div class="fill"></div>
+                </div>
+                <div class="mask half">
+                  <div class="fill"></div>
+                </div>
+                <div class="inside-circle">
+                <div class="progress-title"></div>    
+                <div>
+                  <span class="percent-value">0</span>%
+                </div>    
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
         <img id="global-pannel-download" class="pdf-download" src="/adminasset/images/pdf-download.png"/>
       </div>
@@ -225,31 +258,50 @@
           <div class="card-body">
             <div class="over-panel">
               <div class="row">
-                <div class="col-md-7 col-sm-12">
-                  <div id="wt-1" class="wt-graph"></div>
-                  <div id="wt-2" class="wt-graph"></div>
-                  <div id="wt-3" class="wt-graph"></div>
-                  <div id="wt-4" class="wt-graph"></div>
-                  <div id="wt-5" class="wt-graph"></div>
-                  <div id="wt-6" class="wt-graph"></div>
-                  <div id="wt-7" class="wt-graph"></div>
-                  <div id="wt-8" class="wt-graph"></div>
-                  <div id="wt-9" class="wt-graph"></div>
-                  <div id="wt-10" class="wt-graph"></div>
-                  <div id="wt-11" class="wt-graph"></div>
-                  <div id="wt-12" class="wt-graph"></div>
+                <div id="second-pdf" class="col-md-7 col-sm-12">  
                 </div>
                 <div class="col-md-5 col-sm-12 ">
                   <div class="calendar-date-range">
-                    <div class="input-group" id="kt_daterangepicker" style="padding-right: 80px;">
+                    <ul id="wt_chart_type" class="range_type">
+                      <li>
+                        <input type="radio" name="chart_type_wt" value="day" checked/>
+                        <label>Day</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="chart_type_wt" value="minute"/>
+                        <label>Minute</label>
+                      </li>
+                    </ul>
+                    <div class="input-group" id="wt_kt_daterangepicker" style="padding-right: 80px;">
                       <input type="text" class="form-control" readonly name="daterangepicker" placeholder="Select date range" />
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="la la-calendar-check-o"></i></span>
                       </div>
+                      <input type="hidden" id="wt_start_time"/>
+                      <input type="hidden" id="wt_end_time"/>
                     </div>
-                    <img id="wt-pannel-download" class="pdf-download" src="/adminasset/images/pdf-download.png" style="top: 0px;" />
+                    <button id="btn_wt_chart_view" class="btn btn-primary" style="margin-top: 20px;">Chart View</button>
+                    <img id="wt-pannel-download" class="pdf-download" src="/adminasset/images/pdf-download.png" style="top: 20px;" />
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div id="wt_graph_loading"  class="loading-bar">
+            <div class="circle-wrap">
+              <div class="circle" style="display: block;">
+                <div class="mask full">
+                  <div class="fill"></div>
+                </div>
+                <div class="mask half">
+                  <div class="fill"></div>
+                </div>
+                <div class="inside-circle">
+                <div class="progress-title"></div>    
+                <div>
+                  <span class="percent-value">0</span>%
+                </div>    
+              </div>
               </div>
             </div>
           </div>
@@ -268,12 +320,24 @@
                 <div class="col-md-7 col-sm-12 cam-graph-panel">
                 </div>
                 <div class="col-md-5 col-sm-12 ">
+                  <ul id="cam_chart_type" class="range_type">
+                      <li>
+                        <input type="radio" name="chart_type_cam" value="day" checked>
+                        <label>Day</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="chart_type_cam" value="minute" >
+                        <label>Minute</label>
+                      </li>
+                    </ul>
                   <div class="calendar-date-range">
-                    <div class="input-group" id="kt_daterangepicker2" style="padding-right: 80px;">
+                    <div class="input-group" id="cam_kt_daterangepicker" style="padding-right: 80px;">
                       <input type="text" class="form-control" readonly name="daterangepicker" placeholder="Select date range" />
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="la la-calendar-check-o"></i></span>
                       </div>
+                      <input type="hidden" id="cam_start_time"/>
+                      <input type="hidden" id="cam_end_time"/>
                     </div>
                     <img id="cam-pannel-download" class="pdf-download" src="/adminasset/images/pdf-download.png" style="top: 0px;" />
                   </div>
@@ -289,360 +353,22 @@
 </section>
 <?php include('common/footer.php'); ?>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script type="text/javascript" src="/adminasset/js/pages/record/form-widgets.js"></script>
+<!-- <script type="text/javascript" src="/adminasset/js/global/html2pdf.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" ></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js" ></script>
 
-<script type='text/javascript'>
-  $('.pdf-download').click(function(){
-    toastr.info('coming soon!')
-  })
-</script>
 <script type="text/javascript">
-  $(document).ready(function() {
-    var size = 120,
-      scaleLength = 0,
-      lineWidth = 16,
-      lineCap = 'butt',
-      animate = 2000;
+  var sound_number_x = [<?php foreach($sound_stop_number as $item ){echo "'WT".$item['wind_turbine_id']."',";}?>];
+  var sound_number_y = [<?php foreach($sound_stop_number as $item ){echo ($item['sound_number']==""? "0,":$item['sound_number']);}?>];
+  var stop_number_y = [<?php foreach($sound_stop_number as $item ){echo $item['stop_number'].",";}?>];
 
-    $(function() {
-      $('#circle-progress-stop-duration').easyPieChart({
-        size: size,
-        scaleLength: scaleLength,
-        lineWidth: lineWidth,
-        lineCap: lineCap,
-        animate: animate,
-        barColor: "#00A1FF",
-        trackColor: '#FFC400',
+  var detect_cam_x = [<?php foreach($sound_stop_number as $item ){echo "'Cam".$item['cam_name']."',";}?>];
+  var detect_cam_y =  [<?php foreach($sound_stop_number as $item ){echo $item['detection_number'].",";}?>];
 
-      });
-
-      $('#circle-progress-production-loss').easyPieChart({
-        size: size,
-        scaleLength: scaleLength,
-        lineWidth: lineWidth,
-        lineCap: lineCap,
-        animate: animate,
-        barColor: "#00A1FF",
-        trackColor: '#FF6600',
-
-      });
-
-      $('#circle-progress-sound-duration').easyPieChart({
-        size: size,
-        scaleLength: scaleLength,
-        lineWidth: lineWidth,
-        lineCap: lineCap,
-        animate: animate,
-        barColor: "#00A1FF",
-        trackColor: 'white',
-
-      });
-
-      $('#circle-progress-data-availability').easyPieChart({
-        size: size,
-        scaleLength: scaleLength,
-        lineWidth: lineWidth,
-        lineCap: lineCap,
-        animate: animate,
-        barColor: "#94CEFD",
-        trackColor: '#727272',
-
-      });
-
-      $('#circle-progress-com-availability').easyPieChart({
-        size: size,
-        scaleLength: scaleLength,
-        lineWidth: lineWidth,
-        lineCap: lineCap,
-        animate: animate,
-        barColor: "#94CEFD",
-        trackColor: '#FFF',
-
-      });
-    });
-  });
-</script>
-<script>
-  $(function() {
-
-    var trace1 = {
-      x: ['WT1', 'WT2', 'WT3', 'WT4', 'WT5', 'WT6', 'WT7', 'WT8', 'WT9', 'WT10', 'WT11', 'WT12'],
-      y: [102, 201, 304, 504, 465, 326, 421, 236, 469, 518, 325, 425],
-      marker: {
-        color: '#94CEFD',
-        line: {
-          width: 1
-        }
-      },
-      name: 'Total sound number',
-      type: 'bar'
-    };
-
-    var trace2 = {
-      x: ['WT1', 'WT2', 'WT3', 'WT4', 'WT5', 'WT6', 'WT7', 'WT8', 'WT9', 'WT10', 'WT11', 'WT12'],
-      y: [32, 31, 44, 54, 85, 66, 51, 46, 89, 38, 45, 65],
-      name: 'Total stop number',
-      marker: {
-        color: '#59D2BD',
-        line: {
-          width: 1
-        }
-      },
-      type: 'bar'
-    };
-
-    var data = [trace1, trace2];
-
-    var layout = {
-      barmode: 'stack',
-      title: {
-        text: 'Sound & Stop per wind turbine',
-        font: {
-          family: 'Times New Roman',
-          size: 24
-        },
-        xref: 'paper',
-        x: 0.05,
-      }
-    };
-    var config = {
-      responsive: true
-    }
-    Plotly.newPlot('sound_stop_graph', data, layout, config);
-
-  });
-
-  $(function() {
-
-    var trace1 = {
-      x: ['Cam22', 'Cam23', 'Cam24', 'Cam32', 'Cam33', 'Cam34', 'Cam35', 'Cam36', 'Cam42', 'Cam43', 'Cam44', 'Cam45', 'Cam46', 'Cam48', 'Cam52', 'Cam53', 'Cam54', 'Cam62', 'Cam63', 'Cam64', 'Cam65', 'Cam66', 'Cam72', 'Cam73', 'Cam74', 'Cam75', 'Cam76', 'Cam77', 'Cam78', 'Cam82', 'Cam84',  'Cam92',  'Cam94',  'Cam102',  'Cam103',  'Cam104', ],
-      y: [800, 654, 902, 1200, 301, 509, 105, 102, 201, 304, 504, 465, 948, 305, 799, 125, 1400, 1000, 405, 326, 421, 236, 469, 1436, 215, 625, 405,865, 250, 129, 948, 674, 584,236, 469, 1436],
-      marker: {
-        color: '#94CEFD',
-        line: {
-          width: 1
-        }
-      },
-      type: 'bar'
-    };
-
-    var data = [trace1];
-
-    var layout = {
-      barmode: 'stack',
-      title: {
-        text: 'Detection per camera',
-        font: {
-          family: 'Times New Roman',
-          size: 24
-        },
-        xref: 'paper',
-        x: 0.05,
-      }
-    };
-    var config = {
-      responsive: true
-    }
-    Plotly.newPlot('detection_graph', data, layout, config);
-
-  });
-</script>
-
-<script type='text/javascript'>
-  $(function() {
-    for(var i = 1; i <= 12; i++){
-      var x = [], status_y = [], sound_y = [], stops_y = [], prod_y = [], wind_speed_y = [], rpm_y = [], max = 14, min = 0;
-      for(var j = 0; j < 72 / 3; j++){
-        x.push(j);
-        status_y.push(Math.random() * (max - min) + min);
-        sound_y.push(Math.random() * (max - min) + min);
-        stops_y.push(Math.random() * (max - min) + min);
-        prod_y.push(Math.random() * (max - min) + min);
-        wind_speed_y.push(Math.random() * (max - min) + min);
-        rpm_y.push(Math.random() * (max - min) + min);
-      }
-
-      var status = {
-        x: x,
-        y: status_y,
-        marker: {
-          color: '#7E7E7E',
-          line: {
-            width: 1
-          }
-        },
-        name: 'Status',
-        type: 'scatter'
-      };
-
-      var sound = {
-        x: x,
-        y: sound_y,
-        marker: {
-          color: '#D9D9D9',
-          line: {
-            width: 1
-          }
-        },
-        name: 'Sound',
-        type: 'scatter'
-      };
-
-      var stops = {
-        x: x,
-        y: stops_y,
-        marker: {
-          color: '#EC7D31',
-          line: {
-            width: 1
-          }
-        },
-        name: 'Stops',
-        type: 'scatter'
-      };
-
-      var wind_speed = {
-        x: x,
-        y: wind_speed_y,
-        marker: {
-          color: '#9DC2E6',
-          line: {
-            width: 1
-          }
-        },
-        name: 'Wind Speed',
-        type: 'scatter'
-      };
-
-      var rpm = {
-        x: x,
-        y: rpm_y,
-        marker: {
-          color: '#4472C3',
-          line: {
-            width: 1
-          }
-        },
-        name: 'RPM',
-        type: 'scatter'
-      };
-
-      var prod = {
-        x: x,
-        y: prod_y,
-        marker: {
-          color: '#FFBF00',
-          line: {
-            width: 1
-          }
-        },
-        name: 'Prod',
-        type: 'scatter'
-      };
-
-      var data = [status, sound, stops, wind_speed, rpm, prod];
-
-      var layout = {
-        barmode: 'stack',
-        title: {
-          text: 'WT '+i,
-          font: {
-            family: 'Times New Roman',
-            size: 24,
-            weight: 'bold'
-          },
-          xref: 'paper',
-          x: 0.01,
-        }
-      };
-      var config = {
-        responsive: true
-      }
-      Plotly.newPlot('wt-'+i, data, layout, config);
-    }
-  });
+  var first_pdf_period = "<?php echo date('d/m/Y', strtotime($start_date));?> - <?php echo date('d/m/Y', strtotime($end_date)); ?>";
 </script>
 
 
-<script type='text/javascript'>
-
-  $(function(){
-    for(let i = 0; i < 36; i++){
-      let graph_item = '<div id="cam-' + i +'" class="wt-graph"></div>';
-      $('.cam-graph-panel').append(graph_item);
-    }
-  })
-
-  $(function() {
-    var cams = ['Cam 22','Cam 23','Cam 24','Cam 32','Cam 33','Cam 34','Cam 35','Cam 36','Cam 42','Cam 43','Cam 44','Cam 45','Cam 46','Cam 48','Cam 52','Cam 53','Cam 54','Cam 62','Cam 63','Cam 64','Cam 65','Cam 66','Cam 72','Cam 73','Cam 74','Cam 75','Cam 76','Cam 77','Cam 78','Cam 82','Cam 84','Cam 92','Cam 94','Cam 102','Cam 103','Ca 104'];
-    
-    for(var i = 0; i < 36; i++){
-      var x = [], danger_y = [], stops_y = [], visi_y = [], max = 14, min = 0;
-      for(var j = 0; j < 36; j++){
-        x.push(j);
-        danger_y.push(Math.random() * (max - min) + min);
-        stops_y.push(Math.random() * (max - min) + min);
-        visi_y.push(Math.random() * (max - min) + min);
-      }
-
-      var danger = {
-        x: x,
-        y: danger_y,
-        marker: {
-          color: '#4472C3',
-          line: {
-            width: 1
-          }
-        },
-        name: 'Danger',
-        type: 'bar'
-      };
-
-      var stops = {
-        x: x,
-        y: stops_y,
-        marker: {
-          color: '#EC7D31',
-          line: {
-            width: 1
-          }
-        },
-        name: 'Stops',
-        type: 'bar'
-      };
-
-      var visi = {
-        x: x,
-        y: visi_y,
-        marker: {
-          color: '#A5A5A5',
-          line: {
-            width: 1
-          }
-        },
-        name: 'Visi',
-        type: 'scatter'
-      };
-
-      var data = [danger, stops, visi];
-
-      var layout = {
-        barmode: 'stack',
-        title: {
-          text: cams[i],
-          font: {
-            family: 'Times New Roman',
-            size: 24,
-            weight: 'bold'
-          },
-          xref: 'paper',
-          x: 0.01,
-        }
-      };
-      var config = {
-        responsive: true
-      }
-      Plotly.newPlot("cam-" + [i], data, layout, config);
-    }
-  });
-</script>
+<script type="text/javascript" src="/adminasset/js/pages/reporting/daterangepicker.js"></script>
+<script type="text/javascript" src="/adminasset/js/pages/reporting/reporting.js"></script>

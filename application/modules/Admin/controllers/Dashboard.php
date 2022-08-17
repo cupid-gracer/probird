@@ -592,159 +592,115 @@ class Dashboard extends MX_Controller
             ->load
             ->library('zip');
 
-        if ($this
-            ->input
-            ->server('REQUEST_METHOD') == 'POST'
-        ) {
+        if ($this->input->server('REQUEST_METHOD') == 'POST') 
+        {
 
             $response_arr = array();
-            $response_arr['error'] = true;
 
             $FromDateTime = $_POST['from_date'] . ' ' . $_POST['from_time'];
             $ToDateTime = $_POST['to_date'] . ' ' . $_POST['to_time'];
             
 
-            if ($_POST['file_type'] == 1) {
-
-                if ($_POST['cluster_name'] != '') {
-
+            if (in_array('Excel', $_POST['file_type']) ) {
+                if ($_POST['cluster_name'] != '' && array_key_exists('download', $_POST)) {
                     $WT_pack_IDs = $_POST['cluster_name'];
-
-                    $response_arr['data'] = $get_wt_packs_in_cluster;
-                    $get_wind_turbine_pack_ids = $this
-                        ->Dashboardmodel
-                        ->get_multiple_wt_in_wind_turbine_pack_by_WT_pack_IDs($WT_pack_IDs);
-
-                    $wind_turbine_IDs = array();
+                    $get_wind_turbine_pack_ids = $this->Dashboardmodel->get_multiple_wt_in_wind_turbine_pack_by_WT_pack_IDs($WT_pack_IDs);
+                    $wind_turbine_IDs = "";
                     foreach ($get_wind_turbine_pack_ids as $key => $wind_turbine_pack_val) {
-                        $wind_turbine_IDs[] = $wind_turbine_pack_val['WT_ID'];
+                        if($key == 0) $wind_turbine_IDs = "'".$wind_turbine_pack_val['WT_ID']."'"; 
+                        else $wind_turbine_IDs = $wind_turbine_IDs.",'".$wind_turbine_pack_val['WT_ID']."'";
                     }
-
-                    $get_wind_turbines_excel = $this
-                        ->Dashboardmodel
-                        ->get_wind_turbine_data_by_Wind_Turbine_IDs($wind_turbine_IDs, $FromDateTime, $ToDateTime);
-
-                    $response_arr['error'] = false;
-                    if (isset($_POST['type'])) {
-                        if ($_POST['type'] == 'ajax') {
-                            echo json_encode($response_arr);
-                            die();
-                        }
+                    $file_name  = "'".$FromDateTime."-".$ToDateTime."'";
+                    $fp = $FromDateTime."-".$ToDateTime;
+                    $FromDateTime  = "'".$FromDateTime."'";
+                    $ToDateTime  = "'".$ToDateTime."'";
+                    $wind_turbine_IDs  = "'".$wind_turbine_IDs."'";
+                    $command = "python3 /var/www/html/scripts/db2excel.py ".$FromDateTime." ".$ToDateTime." ".$wind_turbine_IDs." ".$file_name." 2>&1";
+                    $result = shell_exec($command);
+                    $_r['type'] = "excel";
+                    if(strpos($result, 'yes') !== false){
+                        $_r['fileName'] = base_url.'uploads/'. $fp .'.xlsx';
+                        $_r['error'] = false;
                     }
-
-                    if (count($get_wind_turbines_excel) > 0) {
-                        $this->ExportFile($get_wind_turbines_excel);
+                    else{
+                        $_r['error'] = true;
+                        $_r['msg'] = "No Data in DB:";
                     }
+                    array_push($response_arr, $_r);  
                 }
-                /*echo json_encode($response_arr);
-                 die;*/
-            } else {
+            } 
+            if(in_array('Video', $_POST['file_type']) || in_array('Picture', $_POST['file_type'])) {
+                $file_type = [];
+                $_r['type'] = 'video_picture';
+                if(in_array('Video', $_POST['file_type'])) array_push($file_type, 'Video');
+                if(in_array('Picture', $_POST['file_type'])) array_push($file_type, 'Picture');
 
-                if (isset($_POST['file_type_video_img'])) {
-                    $file_type = $_POST['file_type_video_img'];
-                    /*$file_type = 'Picture';
-                    if($_POST['file_type'] == 2){
-                    $file_type = 'Picture';
-                    }elseif($_POST['file_type'] == 3){
-                    $file_type = 'Video';
-                    }*/
-                    $get_medias = $this
-                        ->Dashboardmodel
-                        ->get_media_by_wt_pack_ids($_POST['cluster_name'], $FromDateTime, $ToDateTime, $file_type);
+                $fileHashName = str_replace(' ', '', implode('_', $file_type).'_'.$_POST['daterangepicker'].'_'.hash_hmac('md5', implode('_', $_POST['cluster_name']), 'secret'));
+                $filePath = "/var/www/html/filelist/".$fileHashName.".txt";
+                if (array_key_exists('calculation', $_POST)) {
+
+                    $get_medias = $this->Dashboardmodel->get_media_by_wt_pack_ids($_POST['cluster_name'], $FromDateTime, $ToDateTime, $file_type);
                     if ($get_medias) {
-
                         $FileSum = 0;
                         $txt = "";
-                        $fileHashName = str_replace(' ', '', $_POST['daterangepicker']);
                         foreach ($get_medias as $key => $media_val) {
                             $filepath1 = $media_val['Path'];
                             $txt .= ",".$filepath1;
-
-                            // if (!array_key_exists('type', $_POST)) {
-                            //         $this
-                            //             ->zip
-                            //             ->read_file($filepath1);
-                            // }
-                            // else{
-                            //     if(file_exists($filepath1)) $FileSum += filesize($filepath1);
-                            // }
                         }
-
-                        $filePath = "/var/www/html/filelist/".$fileHashName.".txt";
                         $myfile = fopen($filePath, "w") or die("Unable to open file!");
                         fwrite($myfile, $txt);
                         fclose($myfile);
-                        if (array_key_exists('type', $_POST)) {
-                            $command = "python3 /var/www/html/list.py ".$filePath." 2>&1";
-                            $result = shell_exec($command);
-                            $FileSum = intval($result);
-                            $response_arr['msg'] = $result;
-                        }
-                        if(array_key_exists('download', $_POST)){
-                            $command = "python3 /var/www/html/zip.py ".$fileHashName." ".$filePath." 2>&1";
-                            $result = exec($command);
-                            if($result == "done"){
-                                $response_arr['fileName'] = base_url.'uploads/'. $fileHashName.'.zip';
-                                $response_arr['error'] = false;
-                            }
-                            else{
-                                $response_arr['error'] = "true";
-                                $response_arr['error_msg'] = $result;
-                            }
-                            echo json_encode($response_arr);
-                            exit();
-                        }
+
+
+
+                        $command = "python3 /var/www/html/list.py ".$filePath." 2>&1";
+                        $result = shell_exec($command);
+                        $FileSum = intval($result);
+                        $_r['msg'] = $result;
 
                         $fileSize = $FileSum;
                         if ($FileSum >= 1073741824) {
-
                             $FileSum = number_format($FileSum / 1073741824, 2) . ' GB';
                         } elseif ($FileSum >= 1048576) {
-
                             $FileSum = number_format($FileSum / 1048576, 2) . ' MB';
                         } elseif ($FileSum >= 1024) {
-
                             $FileSum = number_format($FileSum / 1024, 2) . ' KB';
                         } elseif ($FileSum > 1) {
-
                             $FileSum = $FileSum . ' bytes';
                         } elseif ($FileSum == 1) {
-
                             $FileSum = $FileSum . ' byte';
                         } else {
-
                             $FileSum = '0 bytes';
                         }
 
                         $data['file_ext'] = $FileSum;
 
-                        $response_arr['file_size_count'] = $FileSum . ' - ' . count($get_medias) . ' File';
-                        $response_arr['error'] = false;
-                        $response_arr['filesize'] = $fileSize;
-                        if (isset($_POST['type'])) {
-                            if ($_POST['type'] == 'ajax') {
-                                echo json_encode($response_arr);
-                                die();
-                            }
-                        }
+                        $_r['file_size_count'] = $FileSum . ' - ' . count($get_medias) . ' File';
+                        $_r['error'] = false;
+                        $_r['filesize'] = $fileSize;
 
-                        echo $filename = "Capespigne-Pictures-Videos" . date("Y-m-d-h-i-sa") . ".zip";
-                        //$filename = "Capespigne-Pictures-Videos.zip";
-                        $this
-                            ->zip
-                            ->download($filename);
                     } else {
-
-                        if (isset($_POST['type'])) {
-                            if ($_POST['type'] == 'ajax') {
-                                $response_arr['error_msg'] = "No Data Found in this section";
-                                echo json_encode($response_arr);
-                                die();
-                            }
-                        }
+                        $_r['error'] = true;
+                        $_r['msg'] = "No Data Found in this section";
                     }
                 }
+                
+                if(array_key_exists('download', $_POST)){
+                    $command = "python3 /var/www/html/zip.py ".$fileHashName." ".$filePath." 2>&1";
+                    $result = exec($command);
+                    if(strpos($result, 'done') !== false){
+                        $_r['fileName'] = base_url.'uploads/'. $fileHashName.'.zip';
+                        $_r['error'] = false;
+                    }
+                    else{
+                        $_r['error'] = "true";
+                        $_r['msg'] = $result;
+                    }
+                }
+                array_push($response_arr, $_r);  
             }
+            echo json_encode($response_arr);
+            die();
         }
         $this
             ->load
@@ -802,7 +758,6 @@ class Dashboard extends MX_Controller
                 ->setCellValueByColumnAndRow(9, $row, $wt_excel_value['Visibility']);
             $row++;
         }
-
         $ReportName = 'Capespigne-Excel-' . date("Y-m-d-h-i-sa");
         $objPHPExcel->getActiveSheet()
             ->setTitle('ProBird-RecordsExcel');
@@ -884,18 +839,135 @@ class Dashboard extends MX_Controller
         $data['active'] = 'reporting';
         $data['submenuactive'] = '';
 
-        $id  = 3;
-        $_orders = $this->Dashboardmodel->get_probird_orders_by_windturbin_id($id);
+        $min_date = date("2021-10-12");
+        $end_date = date("Y-m-d");
+        $start_date = date('Y-m-d', strtotime('-1 years'));
+        if($min_date > $start_date) $start_date = $min_date; 
+        $data['start_date'] = $start_date;
+        $data['end_date'] = $end_date;
+        
+        $_stats = $this->Dashboardmodel->get_statistics_by_date($start_date, $end_date);
+        $data['stats'] = $_stats[0];
 
-        var_dump($_orders);    die;
-
-
-
+        $_r = $this->Dashboardmodel->get_stop_sound_number_from_statistics($start_date, $end_date);
+        $data['sound_stop_number'] = $_r;
 
 
         $this
             ->load
             ->view('reporting', $data);
+    }
+
+    public function cal_power_amount($wind_speed, $type)
+    {
+        if( $wind_speed > 0){
+            $increment = $type == 'S' ? 3600: 60;
+            $production = 3346.35 / (1+exp(5.60355-0.68957 * $wind_speed));
+            $production = $production / $increment;
+        }else
+            $production = 0;
+        return $production;
+    }
+    
+    public function wt_graph()
+    {
+        $start_time = $_POST['start'];   
+        $end_time = $_POST['end'];   
+        $chart_type = $_POST['chart_type'];
+        $wt_id_name = 'Wind_Turbine_ID';
+        $timestamp_name = 'Time_Stamp';
+        if($chart_type == 'minute'){
+            $data = $this->Dashboardmodel->get_wind_turbine_data_by_date($start_time, $end_time);
+            usort($data, function($a, $b){return $a["Wind_Turbine_ID"] <=> $b["Wind_Turbine_ID"];});
+        }
+        else{
+            $data = $this->Dashboardmodel->get_statistics_by_every_date($start_time, $end_time);
+            usort($data, function($a, $b){return $a["wind_turbine_id"] <=> $b["wind_turbine_id"];});
+            $wt_id_name = 'wind_turbine_id';
+            $timestamp_name = 'date';
+        }
+        
+        $result = [];
+        $key = -1;
+        $_r = [];
+        for($i = 0; $i < count($data); $i++){
+            $item = $data[$i];
+            if($key == $item[$wt_id_name]){
+                array_push( $_r, $item);
+            }else{
+                if($key != -1){
+                    array_push($result, array('wt_id' => $key, 'data' => $_r));
+                    $_r = [];
+                }
+                $key = $item[$wt_id_name];
+                array_push( $_r, $item);
+            }
+        }
+        if($key != -1) array_push($result, array('wt_id' => $key, 'data' => $_r));
+
+        for($i = 0; $i < count($result); $i++)
+        {
+            $_temp = $result[$i]['data'];
+            if($chart_type == 'minute'){
+                usort($_temp, function($a, $b){return $a["Time_Stamp"] <=> $b["Time_Stamp"];});
+
+                $_tp = [];
+                $_date_time = "";
+                $_count = 0;
+                $_wind_speed = 0;
+                $_rpm = 0;
+                $_stops = 0;
+                $_prod = 0;
+                foreach ($_temp as $key => $item) {
+                    if($_date_time == substr($item['Time_Stamp'], 0, 16)){
+                        $_count++;
+                        $_wind_speed += $item['Wind_Speed'];
+                        $_rpm += $item['RPM'];
+                        $_stops += $item['Status'] == 7? 1:0;
+                        $_prod += $item['Status'] != 7? $this->cal_power_amount($item['Wind_Speed'], 'S'):0;
+                    }
+                    else{
+                        if($_date_time != ""){
+                            $_wind_speed = $_wind_speed / $_count;
+                            $_rpm = $_rpm / $_count;
+                            array_push( $_tp, array('Time_Stamp' => $_date_time,
+                                        'Wind_Speed' => round($_wind_speed, 2),
+                                        'RPM' => round($_rpm, 2),
+                                        'Stop_number' => $_stops,
+                                        'Prod' => round($_prod, 2),
+                                            ));
+                            $_count = 0;
+                            $_wind_speed = 0;
+                            $_rpm = 0;
+                            $_stops = 0;
+                            $_prod = 0;
+                        }
+                        $_count++;
+                        $_wind_speed += $item['Wind_Speed'];
+                        $_rpm += $item['RPM'];
+                        $_stops += $item['Status'] == 7? 1:0;
+                        $_prod += $item['Status'] != 7? $this->cal_power_amount($item['Wind_Speed'], 'S'):0;
+                        $_date_time = substr($item['Time_Stamp'], 0, 16);
+                    }
+                    if($key == (count($_temp) - 1)){
+                        $_wind_speed = $_wind_speed / $_count;
+                        $_rpm = $_rpm / $_count;
+                        array_push( $_tp, array('Time_Stamp' => $_date_time,
+                                    'Wind_Speed' => round($_wind_speed, 2),
+                                    'RPM' => round($_rpm, 2),
+                                    'Stop_number' => $_stops,
+                                    'Prod' => round($_prod, 2),
+                                        ));
+                    }
+                }
+                $_temp = $_tp;
+            }
+            else{
+                usort($_temp, function($a, $b){return $a["date"] <=> $b["date"];});
+            }
+            $result[$i]['data'] = $_temp;
+        }
+        echo json_encode($result);
     }
 
     public function upload_reporting()

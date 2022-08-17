@@ -197,9 +197,13 @@ def processingImageNumber(date, wt_cams):
     expect_number_each_cam = math.ceil(day_time/capture_time)
 
 
-    sql = "SELECT count(*) as img_number, WT_pack_ID FROM medias  WHERE DATE(Time_Stamp) = '" + date + "' GROUP BY WT_pack_ID"
+    sql = "SELECT count(*) as img_number, WT_pack_ID FROM medias  WHERE DATE(Time_Stamp) = '" + date + "' AND Type='Picture' GROUP BY WT_pack_ID"
     cursor.execute(sql)
     medias = cursor.fetchall()
+    
+    sql = "SELECT count(*) as video_number, WT_pack_ID FROM medias  WHERE DATE(Time_Stamp) = '" + date + "' AND Type='Video' GROUP BY WT_pack_ID"
+    cursor.execute(sql)
+    videos = cursor.fetchall()
     
     result = []
 
@@ -208,9 +212,11 @@ def processingImageNumber(date, wt_cams):
         cam_number = len(wt_cam[1])
         expected_img_number = expect_number_each_cam * cam_number
         img_number = 0
+        video_number = 0
         for wt_pack_id in wt_cam[1]:
             img_number = img_number + next((x[0] for x in medias if x[1] == wt_pack_id),0)
-        result.append([wt_id, expected_img_number, img_number])
+            video_number = video_number + next((x[0] for x in videos if x[1] == wt_pack_id),0)
+        result.append([wt_id, expected_img_number, img_number, video_number])
     return result
 
 
@@ -267,14 +273,14 @@ try:
     connection = mysql.connector.connect(host='localhost', port=3306, database='capespigne_probird', user='sol', password='6eu21pt7')
     cursor = connection.cursor()
     
-    # processingRowNumber('2022-04-01')
-    # exit()
+    
 
     # Date Generate
-    dates = genDateRange('2021-10-12', '2022-08-02', 'd')
+    dates = genDateRange('2021-10-12', '2022-08-03', 'd')
 
     # Get relations between WT pack and WT
     wt_cams = getRelationWTPackAndWT()
+
     # Loop in dates
     for date in dates:
         date = str(date)[:10]
@@ -312,11 +318,12 @@ try:
             _img = next((x for x in img_numbers if x[0] == wind_turbine_id),0)
             expected_img_number = _img[1]
             img_number = _img[2]
+            video_number = _img[3]
             _row_number = next((x for x in row_numbers if x[0] == wind_turbine_id),0)
             _row_number = _row_number[1]
 
-            sql = "INSERT INTO statistics (wind_turbine_id, date, expect_power_amount, loss_power_amount, uptime, downtime, stop_number, avg_wind_speed, avg_rpm, expected_img_number, img_number, expect_wt_data_number, wt_data_number) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            val = (wind_turbine_id, date, expect_power_amount, loss_power_amount, _uptime, _downtime, _stop_number, avg_wind_speed, avg_rpm, expected_img_number, img_number, expect_row_number, _row_number)
+            sql = "INSERT INTO statistics (wind_turbine_id, date, expect_power_amount, loss_power_amount, uptime, downtime, stop_number, avg_wind_speed, avg_rpm, expected_img_number, img_number, expect_wt_data_number, wt_data_number, detection_number) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            val = (wind_turbine_id, date, expect_power_amount, loss_power_amount, _uptime, _downtime, _stop_number, avg_wind_speed, avg_rpm, expected_img_number, img_number, expect_row_number, _row_number, video_number)
             cursor.execute(sql, val)
 
         connection.commit()

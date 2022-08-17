@@ -87,7 +87,7 @@ class Dashboardmodel extends CI_Model
         {
 
                 $query = $this->db->select()
-                        ->from('wind_turbine_data')
+                        ->from('wind_turbine_data1')
                         ->where('Time_Stamp BETWEEN "' . $FromDateTime . '" AND "' . $ToDateTime . '"')
                         ->where_in('Wind_Turbine_ID', $Wind_Turbine_IDs)
                         ->order_by("ID", "desc")
@@ -652,13 +652,62 @@ class Dashboardmodel extends CI_Model
                 return $query->result_array();
         }
 
-        public function get_probird_orders_by_windturbin_id($wind_turbine_id)
+        public function get_statistics_by_date($start_date, $end_date)
         {
-                $query = $this->db->from('probird_orders')
-                                ->where('Wind_turbine', $wind_turbine_id)
-                                ->where('Time_Stamp', '2022-04-04')
-                                ->order_by("ID", "desc")
+                $query = $this->db
+                                ->select('SUM(expect_power_amount) as EPA, 
+                                        SUM(loss_power_amount) as LPA,  
+                                        SUM(uptime) as uptime, SUM(downtime) as downtime,  
+                                        SUM(detection_number) as detection_number,  
+                                        SUM(stop_number) as stop_number,  
+                                        SUM(sound_number) as sound_number,
+                                        SUM(sound_time) as sound_time,
+                                        SUM(expected_img_number) as expected_img_number,
+                                        SUM(img_number) as img_number,
+                                        SUM(expect_wt_data_number) as expect_wt_data_number,
+                                        SUM(wt_data_number) as wt_data_number
+                                        ')
+                                ->from('statistics')
+                                ->where('date between "'. $start_date . '" AND "'. $end_date.'"')
                                 ->get();
+                return $query->result_array();
+        }
+
+        public function get_stop_sound_number_from_statistics($start_date, $end_date)
+        {
+                $query = $this->db
+                                ->select('wind_turbine_id,
+                                        SUM(stop_number) as stop_number,
+                                        SUM(sound_number) as sound_number,
+                                        SUM(detection_number) as detection_number,
+                                        folder_name as cam_name
+                                        ')
+                                ->from('statistics')
+                                ->join('wind_turbine_pack as wtp', 'wtp.ID = statistics.wind_turbine_id')
+                                ->where('date between "'. $start_date . '" AND "'. $end_date.'"')
+                                ->group_by('wind_turbine_id')
+                                ->get();
+                return $query->result_array();
+        }
+
+
+        public function get_wind_turbine_data_by_date($start_time, $end_time)
+        {
+                $query = $this->db->select('Time_Stamp, Wind_Turbine_ID, Wind_Speed, RPM, Visibility, Status')
+                                        ->from('wind_turbine_data1')
+                                        ->where('Time_Stamp between "'.$start_time.'" AND "'.$end_time.'"')
+                                        ->group_by('Wind_Turbine_ID, Time_stamp')
+                                        ->get();
+                return $query->result_array();
+        }
+        
+        public function get_statistics_by_every_date($start_time, $end_time)
+        {
+                $query = $this->db->select('date, wind_turbine_id, expect_power_amount, loss_power_amount, stop_number, sound_number, avg_wind_speed, avg_rpm')
+                                        ->from('statistics')
+                                        ->where('date between "'.$start_time.'" AND "'.$end_time.'"')
+                                        ->group_by('wind_turbine_id, date')
+                                        ->get();
                 return $query->result_array();
         }
 }

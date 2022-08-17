@@ -222,7 +222,7 @@
           <div class="record_section">
             <div class="col-md-12">
               <h3>Camera Angles</h3>
-              <form id="DownloadFormID" method="post">
+              <form id="DownloadFormID" method="post" action="/index.php/admin/records">
                 <div class="row manage section">
                   <div class="col-md-3">
                     <div class="Camera_Angles_select_section">
@@ -366,7 +366,7 @@
                           <div class="file_section">
                             <lable>Data Type</lable>
                             <ul>
-                              <li>
+                              <!-- <li>
                                 <input type="radio" name="file_type" value="1" id="ExcelFileID">
                                 <label for="ExcelFileID">Excel File</label>
                               </li>
@@ -374,14 +374,18 @@
                               <li>
                                 <input type="radio" name="file_type" value="4" id="Picture_Video" checked>
                                 <label for="Picture_Video">Picture + Video</label>
-                              </li>
+                              </li> -->
 
                               <li class="checkbox_manage">
-                                <input type="checkbox" name="file_type_video_img[]" value="Picture" id="PicturesFileID" checked>
+                                <input type="checkbox" name="file_type[]" value="Excel" id="ExcelFileID" checked>
+                                <label for="ExcelFileID">Excel File</label>
+                              </li>
+                              <li class="checkbox_manage">
+                                <input type="checkbox" name="file_type[]" value="Picture" id="PicturesFileID" checked>
                                 <label for="PicturesFileID">Stacked Pictures</label>
                               </li>
                               <li class="checkbox_manage">
-                                <input type="checkbox" name="file_type_video_img[]" value="Video" id="VideosFileID" checked>
+                                <input type="checkbox" name="file_type[]" value="Video" id="VideosFileID" checked>
                                 <label for="VideosFileID">Videos</label>
                               </li>
 
@@ -571,20 +575,20 @@
       }
     });
 
-    jQuery(".record_section .main_block ul li > input[type=radio]").click(function() {
-      var get_data_type = $(this).val();
+    // jQuery(".record_section .main_block ul li > input[type=radio]").click(function() {
+    //   var get_data_type = $(this).val();
 
-      jQuery('.data_volume_btn').show();
-      jQuery('.checkbox_manage').show();
-      //jQuery('.download_button').hide();
+    //   jQuery('.data_volume_btn').show();
+    //   jQuery('.checkbox_manage').show();
+    //   //jQuery('.download_button').hide();
 
-      if (get_data_type == 1) {
-        jQuery('.data_volume_btn').hide();
-        jQuery('.checkbox_manage').hide();
-        jQuery('.download_button').show();
+    //   if (get_data_type == 1) {
+    //     jQuery('.data_volume_btn').hide();
+    //     jQuery('.checkbox_manage').hide();
+    //     jQuery('.download_button').show();
 
-      }
-    });
+    //   }
+    // });
 
   });
 
@@ -622,19 +626,37 @@
 
   jQuery(document).ready(function() {
     
+    $('.checkbox_manage input[type=checkbox]').click(function(){
+      
+      if($('.checkbox_manage input[type=checkbox]:checked').length == 1 && $('.checkbox_manage input[type=checkbox]:checked').val() == "Excel"){
+        $('.download_button').show();
+        $(".data_volume_btn").hide();
+      }else{
+        $('.download_button').hide();
+        $(".data_volume_btn").show();
+      }
+      if($('.checkbox_manage input[type=checkbox]:checked').length == 0){
+        $(".download_button").hide();
+        $(".data_volume_btn").hide();
+      }
+    });
+
+
     $('.download_button').click(function(e){
       e.preventDefault();
-
+      
       if($('input[name=daterangepicker]').val() == "") {toastr.warning('Please select data range!'); return;}
 
       setProgress(0,'','download_loader');
       var filesize = $('#filesize').val();
       var time = (filesize / 2147483648) * 120;
-      jQuery('#download_loader').show();
+      // jQuery('#download_loader').show();
 
-      var progress = rotateProgress('compressing...',time, 'download_loader');
-
-
+      var checkBox = document.getElementById("ExcelFileID");
+      if(checkBox.checked == true){
+        var progress = rotateProgress('processing...',300, 'download_loader', true);
+      }
+      else var progress = rotateProgress('processing...',time, 'download_loader', true);
 
       jQuery.ajax({
         type: 'POST',
@@ -642,26 +664,30 @@
         dataType: 'json',
         data: jQuery('#DownloadFormID').serialize() + '&download=true',
         success: function(response) {
-          setProgress(100, 'compressing...', 'download_loader');
+          setProgress(100, 'processing...', 'download_loader');
           clearInterval(progress);
-         
-          if (response.error) {
-            if (response.error_msg) {
-              toastr.error(response.error_msg);
+          for(let i = 0; i < response.length; i++){
+            let _res = response[i];
+            if (_res.error) {
+              if (_res.msg) {
+                toastr.info(_res.msg);
+              }
+            } else {
+              console.log(_res.fileName);
+              window.open(_res.fileName);
             }
-          } else {
-            window.open(response.fileName,'_self');
-          }
+          };
         }
       });
     });
 
 
     jQuery(".data_volume_btn").click(function() {
+      
       setProgress(0,'','download_loader');
       if($('input[name=daterangepicker]').val() == "") {toastr.warning('Please select data range!'); return;}
       jQuery('.Data_Volume_section h2').text('');
-      if (jQuery('.record_section .main_block ul li input[type=checkbox]').prop("checked") == true) {
+      // if (jQuery('.record_section .main_block ul li input[type=checkbox]').prop("checked") == true) {
         var progress = rotateProgress('calculating...',8, 'download_loader');
         $('#download_button').hide();
 
@@ -669,7 +695,7 @@
           type: 'POST',
           url: '<?php echo base_url; ?>index.php/admin/records',
           dataType: 'json',
-          data: jQuery('#DownloadFormID').serialize() + '&type=ajax',
+          data: jQuery('#DownloadFormID').serialize() + '&calculation=true',
           beforeSend: function(response) {
             jQuery('#download_loader').show();
           },
@@ -679,16 +705,17 @@
 
             $('#download_button').hide();
 
-            if (response.error) {
-              if (response.error_msg) {
+            if (response[0].error) {
+              if (response[0].msg) {
                 //jQuery('.Data_Volume_section h2').show().text(response.error_msg).fadeOut(8000);
-                jQuery('.Data_Volume_section h2').text(response.error_msg);
+                jQuery('.Data_Volume_section h2').text(response[0].msg);
                 jQuery('.Data_Volume_section p').text('');
+                toastr.info(response[0].msg);
               }
             } else {
               jQuery('.Data_Volume_section h2').text('');
-              jQuery('.Data_Volume_section p').text(response.file_size_count);
-              let msg = response.file_size_count;
+              jQuery('.Data_Volume_section p').text(response[0].file_size_count);
+              let msg = response[0].file_size_count;
               if(msg.indexOf('No') !== -1){
                 $('#download_button').hide();
               }else{
@@ -697,24 +724,23 @@
                 if(unit == "GB" && filesize > 2){
                   toastr.info("You can't download this file because file size is over than 2 Gbytes");
                 }else{
-                  $('#filesize').val(response.filesize);
-                  if(response.filesize > 0) $('#download_button').show();
+                  $('#filesize').val(response[0].filesize);
+                  if(response[0].filesize > 0) $('#download_button').show();
                 }
               }
             }
           },
         });
         return false;
-      } else {
-
-        toastr.warning('Please Select Stacked Pictures or Videos Checkbox');
-      }
+      // } else {
+      //   toastr.warning('Please Select Stacked Pictures or Videos Checkbox');
+      // }
     });
   });
 </script>
 
 <script type="text/javascript">
-  function rotateProgress(title, time, html_id){
+  function rotateProgress(title, time, html_id, stop_99=false){
     if($('#'+html_id).css('display') != 'none'){
       toastr.info('Please attempt this action after loading.')
       return
@@ -725,6 +751,9 @@
     var progress = setInterval(()=>{
       percent += 1;
       setProgress(percent, title, html_id)
+      if(stop_99 && percent == 99 ){
+        clearInterval(progress);
+      }
       if(percent > 99){
         clearInterval(progress);
         setTimeout(() => {

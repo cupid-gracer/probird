@@ -63,6 +63,8 @@ $route['admin/logout'] = 'Admin/Login/logout';
 $route['admin/sytemstatus'] = 'Admin/Dashboard/sytemstatus_';
 $route['admin/record'] = 'Admin/Dashboard/record';
 $route['admin/reporting'] = 'Admin/Dashboard/reporting';
+$route['admin/reporting/wt_graph'] = 'Admin/Dashboard/wt_graph';
+
 $route['admin/upload/reporting'] = 'Admin/Dashboard/upload_reporting';
 $route['admin/register'] = 'Admin/Dashboard/register';
 $route['admin/upload/register'] = 'Admin/Dashboard/upload_register';
